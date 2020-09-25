@@ -1,4 +1,4 @@
-### Hi there 👋, my name Nguyễn Huỳnh Nguyên and you can call me just Nguyen (/'nuyn/) or Player Nguyen
+### Hi there 👋, my name Nguyễn Huỳnh Nguyên. Call me just Nguyen or Player Nguyen
 
 <!--
 **PlayerNguyen/PlayerNguyen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
