@@ -1,6 +1,5 @@
-### Hi there 👋, my name Nguyễn Huỳnh Nguyên. Call me just Nguyen or Player Nguyen
-- I am currently learning Information Technology in International University, Ho Chi Minh City.
-- Knowing lots of Bukkit core and Java. 
+### 
+/* Empty space */
 
 <!--
 **PlayerNguyen/PlayerNguyen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
