@@ -1,6 +1,5 @@
 ### 
-- Computer Scientist with love
-- Java, JavaScript, and more languages coder, scroll down to checkout my project
+- Java, JavaScript, and more, scroll down to checkout my projects
 
 <!--
 **PlayerNguyen/PlayerNguyen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
