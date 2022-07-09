@@ -10,8 +10,6 @@ A Vietnamese (🇻🇳) Computer Science Student abnormal GitHub profile.
 - Electron Desktop Application
 - ...
 
-However, no one is perfect, so am I and need to keep learning more things in the future.
-
 # 💬 Introduction 
 ![Metrics](/github-metrics.svg)
 
