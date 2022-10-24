@@ -1,0 +1,12 @@
+.hero-footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-footer .shape-fill {
+  fill: #3a3a3d;
+}
