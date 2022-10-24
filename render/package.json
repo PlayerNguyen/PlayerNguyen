@@ -1,8 +1,7 @@
 {
-  "name": "render",
+  "name": "player-nguyen-render",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
   "private": true,
   "dependencies": {
     "animate.css": "^4.1.1",
