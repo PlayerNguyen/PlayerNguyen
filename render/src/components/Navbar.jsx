@@ -17,7 +17,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="navbar-wrapper bg-[#000000b5] block">
+    <header className="navbar-wrapper bg-[#000000b5] block">
       <div
         className={`top-0 px-16 py-4 bg-transparent h-full w-full z-50 text-md ${
           visible ? "md:block" : "block"
@@ -25,6 +25,6 @@ export default function Navbar() {
       >
         {/* <h1>Home</h1> */}
       </div>
-    </div>
+    </header>
   );
 }

@@ -24,9 +24,7 @@ function HeroContainerHeader() {
       >
         Player Nguyen
       </h1>
-      <h3 className="text-xl uppercase font-bold">
-        Intern full-stack engineering
-      </h3>
+      <h3 className="text-xl uppercase font-bold">Computer Science Engineer</h3>
       <p className="text-md mt-3 text-zinc-300">
         Third-year university student dedicated to building React, Express
         applications.
@@ -331,7 +329,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero */}
-      <div
+      <section
         className={`hero relative min-h-[100vh] z-30 
       overflow-hidden top-0 left-0 h-full
       w-full text-gray-300 
@@ -382,12 +380,14 @@ export default function App() {
             ></path>
           </svg>
         </div>
-      </div>
+      </section>
+
+
 
       {/* Footer */}
-      <div className="relative bg-zinc-900 px-12 py-8 w-full">
+      <footer className="relative bg-zinc-900 px-12 py-8 w-full">
         <div className="my-32 flex-reverse-row gap-6"></div>
-      </div>
+      </footer>
     </div>
   );
 }
