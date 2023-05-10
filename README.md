@@ -3,7 +3,7 @@ A Vietnamese (🇻🇳) Computer Science Student abnormal GitHub profile.
 
 # 📚 Knowledge
 - Object-Oriented Programming Principles
-- Basic Data Structure: Array, Linked List, Queue, Stack, Tree and Graph
+- Data Structure: Array, Linked List, Queue, Stack, Tree and Graph
 - Created Minecraft plugins
 - Created ReactJS / TailwindCSS / SCSS / SASS Web Application
 - Created ExpressJS RESTful Application
