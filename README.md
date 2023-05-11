@@ -1,15 +1,12 @@
 
-A Vietnamese (🇻🇳) Computer Science Student abnormal GitHub profile.
+Love coding.
 
-# 📚 Knowledge
-- Object-Oriented Programming Principles
-- Data Structure: Array, Linked List, Queue, Stack, Tree and Graph
+# Experiences
 - Created Minecraft plugins
 - Created ReactJS / TailwindCSS / SCSS / SASS Web Application
 - Created ExpressJS RESTful Application
 - Electron Desktop Application
-- ...
-
+- 
 # 💬 Introduction 
 ![Metrics](/github-metrics.svg)
 
