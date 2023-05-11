@@ -1,6 +1,8 @@
-import React from "react";
-import HeroDecoration from "./HeroDecoration";
-import HeroHeader from "./HeroHeader";
+import React, { Suspense } from "react";
+// import HeroDecoration ;
+const HeroDecoration = React.lazy(() => import("./HeroDecoration"));
+const HeroHeader = React.lazy(() => import("./HeroHeader"));
+// import HeroHeader from ;
 
 export default function HeroMain() {
   return (
@@ -11,10 +13,21 @@ export default function HeroMain() {
       md:py-28 md:px-16`}
     >
       {/* Hero header */}
-      <HeroHeader />
+      <Suspense fallback={<div></div>}>
+        <HeroHeader />
+      </Suspense>
 
       {/* Hero decoration */}
-      <HeroDecoration />
+      <Suspense
+        fallback={
+          <div className="animate-pulse">
+            <div className="w-full h-12 bg-black bg-opacity-60 mb-12"></div>
+            <div className="w-full h-4 bg-gray-300 bg-opacity-60"></div>
+          </div>
+        }
+      >
+        <HeroDecoration />
+      </Suspense>
 
       {/* Hero footer  */}
       <div className="hero-footer relative">

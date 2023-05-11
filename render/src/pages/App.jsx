@@ -1,14 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import "./App.css";
-
-import HeroMain from "../components/Hero/HeroMain";
+import Navbar from "../components/Navbar";
+const HeroMain = React.lazy(() => import("../components/Hero/HeroMain"));
 
 export default function App() {
   return (
     <div className="app-container-wrapper bg-zinc-800 ">
       {/* <Navbar /> */}
-      <Navbar />
 
       {/* Hero */}
       <HeroMain />

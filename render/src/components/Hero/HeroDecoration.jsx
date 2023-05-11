@@ -33,7 +33,7 @@ export default function HeroDecoration() {
       textSize: "text-6xl",
     },
     {
-      icon: <SiJava />,
+      icon: <SiGit />,
       x: "52vw",
       y: "16vh",
       textColor: "text-red-400",

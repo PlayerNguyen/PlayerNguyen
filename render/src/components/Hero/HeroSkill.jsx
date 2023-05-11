@@ -12,6 +12,10 @@ export default function HeroSkill() {
       name: "Design",
       value: 6,
     },
+    {
+      name: "",
+      value: 6,
+    }
   ]);
 
   return (
@@ -19,31 +23,9 @@ export default function HeroSkill() {
       <h1 className="text-4xl my-6 font-bold">Skills</h1>
       {/* Container */}
       <div className="hero-skill-container bg-white text-zinc-700 px-12 py-6 rounded-xl">
-        {/* Using radar chart to represent information */}
-        <RadarChart
-          data={[
-            {
-              name: "a",
-              value: 2,
-            },
-            {
-              name: "b",
-              value: 4,
-            },
-            {
-              name: "c",
-              value: 6,
-            },
-            {
-              name: "d",
-              value: 6,
-            },
-            {
-              name: "e",
-              value: 6,
-            },
-          ]}
-        />
+        {skills.map((skill) => {
+          return <div className="inline-block mr-2">{skill.name}</div>;
+        })}
       </div>
     </div>
   );

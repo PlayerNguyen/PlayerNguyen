@@ -26,7 +26,7 @@ export default function HeroHeader() {
             <span>Computer Science Engineer</span>
           </div>
 
-          <p className="text-md mt-3 text-zinc-300">
+          <p className="text-lg mt-3 text-zinc-300">
             Third-year university student dedicated to building React, Express
             applications.
           </p>

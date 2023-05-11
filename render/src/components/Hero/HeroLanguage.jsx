@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  fetchRepositories,
+  fetchRepositoryLanguage,
+} from "../../request/GitHubRequest";
+import { generateRandomHex } from "../../utils/hexGen";
 
 export default function HeroLanguage() {
   const [languageList] = useState([
@@ -28,18 +33,10 @@ export default function HeroLanguage() {
       .filter((e) => e.percent >= 0.1)
       .sort((a, b) => b.percent - a.percent);
 
-    // Assign color to each language
-    const color = [
-      "#761A1A",
-      "#032A33",
-      "#C2BE53",
-      "#492540",
-      "#062C80",
-      "#3C1B1F",
-      "#DEBA9D",
-      "#9E7777",
-      "#6F4C5B",
-    ];
+    // Generate color set
+    const color = [];
+    for (let i = 0; i < 30; i++) color.push("#" + generateRandomHex());
+
     _mostPopularLanguage.push({
       name: "Others",
       percent: 100 - _mostPopularLanguage.reduce((a, b) => a + b.percent, 0),
@@ -53,11 +50,24 @@ export default function HeroLanguage() {
 
     setMostPopularLanguage(_mostPopularLanguage);
   }, []);
+  useEffect(() => {
+    fetchRepositories().then((response) => {
+      const repositories = response.data;
 
+      Promise.all(
+        repositories.map(async ({ name }) => {
+          const response = await fetchRepositoryLanguage(name);
+          return response.data;
+        })
+      ).then((items) => {
+        console.log(items);
+      });
+    });
+  }, []);
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-4xl font-bold">Language</h1>
-      <div className="mt-2 bg-zinc-100 px-8 py-6 rounded-xl text-gray-600">
+      <div className="mt-2 bg-zinc-100 px-8 py-6 rounded-md text-gray-600 shadow-lg">
         {/* Build the color slider */}
         <div className="slider-wrapper block w-full" ref={sliderWrapper}>
           <div className="flex">
