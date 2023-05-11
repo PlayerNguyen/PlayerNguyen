@@ -1,12 +1,11 @@
 
-Love coding.
+Love coding. 
 
 # Experiences
 - Created Minecraft plugins
 - Created ReactJS / TailwindCSS / SCSS / SASS Web Application
 - Created ExpressJS RESTful Application
 - Electron Desktop Application
-- 
 # 💬 Introduction 
 ![Metrics](/github-metrics.svg)
 
