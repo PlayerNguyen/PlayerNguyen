@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./Index.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const app = document.getElementById("app");
 
@@ -11,6 +12,8 @@ if (app === null) {
 
 createRoot(app).render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );

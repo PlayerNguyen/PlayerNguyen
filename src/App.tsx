@@ -1,5 +1,15 @@
 import React from "react";
+import Header from "./components/Header";
+import IntroductionHero from "./components/IntroductionHero/IntroductionHero";
 
 export default function App() {
-  return <div className="p-6">Hello world</div>;
+  return (
+    <div className="app-container">
+      {/* Header */}
+      <Header />
+
+      {/* Hero introduction thumbnail */}
+      <IntroductionHero />
+    </div>
+  );
 }
