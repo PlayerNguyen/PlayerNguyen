@@ -41,6 +41,7 @@ export default function GraphMaze(props: MazeProps) {
       [...new Array(props.width)].fill(NodeType.EMPTY)
     )
   );
+  const [estimateDistance, setEstimateDistance] = useState<number>(0);
 
   useEffect(() => {
     updateSource(props.width / 4, props.height / 4);
@@ -52,6 +53,10 @@ export default function GraphMaze(props: MazeProps) {
 
     setNodeType(props.width / 2 - 6, props.height / 2, NodeType.EMPTY);
   }, []);
+
+  useEffect(() => {
+    setEstimateDistance(distance(source, destination));
+  }, [source, destination]);
 
   const setNodeType = (x: number, y: number, type: NodeType) => {
     setGraph((g) => [
@@ -112,7 +117,7 @@ export default function GraphMaze(props: MazeProps) {
         controller?.abort();
       }
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < mx.length; i++) {
         const dX = curX + mx[i];
         const dY = curY + my[i];
         // console.log(dX, dY);
@@ -131,6 +136,112 @@ export default function GraphMaze(props: MazeProps) {
         q.enqueue({ x: dX, y: dY });
         if (getNodeType(dX, dY) !== NodeType.DESTINATION)
           setNodeType(dX, dY, NodeType.VISITED);
+      }
+    }, visualOptions.speed);
+  };
+
+  const distance = (a: Point, b: Point) => {
+    const x = b.x - a.x;
+    const y = b.y - a.y;
+    return Math.sqrt(x * x + y * y);
+  };
+
+  const findShortestAStar = (
+    source: Point,
+    destination: Point,
+    controller?: AbortController
+  ) => {
+    console.log(`Evaluating path using A *`);
+    // Setup a closed list
+    const closed: boolean[][] = new Array(props.height);
+    for (let i = 0; i < props.height; i++) {
+      closed[i] = new Array(props.width).fill(false);
+    }
+
+    const detail: { g: number; h: number; f: number; parent: Point }[][] =
+      new Array(props.height);
+    for (let i = 0; i < props.height; i++) {
+      detail[i] = new Array(props.width).fill({
+        g: Number.MAX_SAFE_INTEGER,
+        h: Number.MAX_SAFE_INTEGER,
+        f: Number.MAX_SAFE_INTEGER,
+        parent: {
+          x: -1,
+          y: -1,
+        },
+      });
+    }
+
+    const openQueue: Queue.PriorityQueue<{ point: Point; factor: number }> =
+      new Queue.PriorityQueue((a, b) => a.factor < b.factor);
+    openQueue.enqueue({ point: { x: source.x, y: source.y }, factor: 0 });
+
+    detail[source.y][source.x] = {
+      g: 0,
+      h: 0,
+      f: 0,
+      parent: {
+        x: 0,
+        y: 0,
+      },
+    };
+
+    const vDirection = [-1, 0, 1, 0, -1, 1, 1, -1];
+    const hDirection = [0, 1, 0, -1, 1, 1, -1, -1];
+
+    let intervalId = setInterval(() => {
+      if (openQueue.isEmpty() || (controller && controller.signal.aborted)) {
+        clearInterval(intervalId);
+      }
+
+      const p = openQueue.dequeue();
+      closed[p.point.y][p.point.x] = true;
+
+      // Find neighbor
+      for (let i = 0; i < vDirection.length; i++) {
+        const nextPoint: Point = {
+          x: p.point.x + vDirection[i],
+          y: p.point.y + hDirection[i],
+        };
+
+        if (nextPoint.x === destination.x && nextPoint.y === destination.y) {
+          clearInterval(intervalId);
+          return;
+        }
+
+        // Boundaries assert
+        if (nextPoint.x < 0 || nextPoint.x >= props.width) continue;
+        if (nextPoint.y < 0 || nextPoint.y >= props.height) continue;
+
+        if (closed[nextPoint.y][nextPoint.x]) {
+          continue;
+        }
+        if (getNodeType(nextPoint.x, nextPoint.y) === NodeType.BLOCKED) {
+          continue;
+        }
+        // Factor properties
+        const gFactor = detail[p.point.y][p.point.x].g + 1;
+        const hFactor = distance(nextPoint, destination);
+        const fFactor = gFactor + hFactor;
+
+        if (
+          detail[nextPoint.y][nextPoint.x].f === Number.MAX_SAFE_INTEGER ||
+          detail[nextPoint.y][nextPoint.x].f > fFactor
+        ) {
+          openQueue.enqueue({ point: nextPoint, factor: fFactor });
+          detail[nextPoint.y][nextPoint.x] = {
+            h: hFactor,
+            g: gFactor,
+            f: fFactor,
+
+            parent: {
+              x: p.point.x,
+              y: p.point.y,
+            },
+          };
+          setNodeType(nextPoint.x, nextPoint.y, NodeType.VISITED);
+          // console.log(openQueue);
+        }
       }
     }, visualOptions.speed);
   };
@@ -185,7 +296,7 @@ export default function GraphMaze(props: MazeProps) {
                     }
                   )}
                   onClick={() => {
-                    // handleCreateBlockEvent(_xIndex, _yIndex);
+                    handleCreateBlockEvent(_xIndex, _yIndex);
                   }}
                   onMouseOver={() => {
                     if (isMouseDown) {
@@ -216,7 +327,7 @@ export default function GraphMaze(props: MazeProps) {
                         {
                           "bg-yellow-600 bg-opacity-25": x === NodeType.VISITED,
                           "bg-green-600": x === NodeType.DESTINATION,
-                          "bg-orange-600": x === NodeType.SOURCE,
+                          "bg-blue-600": x === NodeType.SOURCE,
                         }
                       )}
                     ></div>
@@ -228,7 +339,94 @@ export default function GraphMaze(props: MazeProps) {
         );
       })}
 
-      <div className="flex flex-row gap-4">
+      {/* Description */}
+      <div className={classNames(`flex flex-col`, `text-sm my-4`)}>
+        <div className={classNames(`flex flex-row gap-4`)}>
+          {/* Block item */}
+          <div className={classNames(`flex flex-row items-center gap-2`)}>
+            <span
+              className={classNames(
+                `inline-block hover:bg-neutral-600 h-4 w-4 relative first:border-l last:border-r border-neutral-700`,
+                "bg-red-500 hover:bg-red-400 "
+              )}
+            ></span>
+            <div className={classNames(`flex flex-col`)}>
+              <p>Block item </p>
+              <span className={classNames(`text-neutral-500`)}>Left mouse</span>
+            </div>
+          </div>
+
+          {/* Start position */}
+          <div className={classNames(`flex flex-row items-center gap-2`)}>
+            <span
+              className={classNames(
+                `inline-block hover:bg-neutral-600 h-4 w-4 relative border-neutral-700`
+              )}
+            >
+              <div
+                className={classNames(
+                  `absolute h-2 w-2 top-1/4 left-1/4`,
+                  `rounded-full bg-blue-500`
+                )}
+              ></div>
+            </span>
+            <div className={classNames(`flex flex-col`)}>
+              <p>Start position</p>
+              <span className={classNames(`text-neutral-500`)}>
+                Left Double-Click
+              </span>
+            </div>
+          </div>
+
+          {/* End position */}
+          <div className={classNames(`flex flex-row items-center gap-2`)}>
+            <span
+              className={classNames(
+                `inline-block hover:bg-neutral-600 h-4 w-4 relative border-neutral-700`
+              )}
+            >
+              <div
+                className={classNames(
+                  `absolute h-2 w-2 top-1/4 left-1/4`,
+                  `rounded-full bg-green-500`
+                )}
+              ></div>
+            </span>
+            <div className={classNames(`flex flex-col`)}>
+              <p>End position</p>
+              <span className={classNames(`text-neutral-500`)}>
+                Right click
+              </span>
+            </div>
+          </div>
+
+          {/* Visited position */}
+          <div className={classNames(`flex flex-row items-center gap-2`)}>
+            <span
+              className={classNames(
+                `inline-block hover:bg-neutral-600 h-4 w-4 relative border-neutral-700`
+              )}
+            >
+              <div
+                className={classNames(
+                  `absolute h-2 w-2 top-1/4 left-1/4`,
+                  `rounded-full bg-yellow-500 bg-opacity-40`
+                )}
+              ></div>
+            </span>
+            <div className={classNames(`flex flex-col`)}>
+              <p>Visited position</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-row gap-4 items-center text-neutral-500">
+        <div className={`text-sm`}>
+          <span></span>
+          <span>Distance: {estimateDistance.toFixed(2)}</span>
+          <span> points</span>
+        </div>
         <Button onClick={() => resetGraph()} text="Reset" />
         {/* <button>Maze</button> */}
         <Button
@@ -237,6 +435,15 @@ export default function GraphMaze(props: MazeProps) {
             resetGraph();
             setVisualAbortController(new AbortController());
             bfs(source, destination, visualAbortController);
+          }}
+        />
+
+        <Button
+          text={"A *"}
+          onClick={() => {
+            resetGraph();
+            setVisualAbortController(new AbortController());
+            findShortestAStar(source, destination, visualAbortController);
           }}
         />
       </div>
