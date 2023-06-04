@@ -22,19 +22,21 @@ export default function IntroductionHero() {
             }
           ></span>
         </div>
-        <div className={`w-full`}>
-          <h2>Hi, i am</h2>
-          <h1 className={classNames(`text-neutral-100`, `font-bold`)}>
-            Nguyễn Huỳnh Nguyên
-          </h1>
-          <h2>a Software Engineering from Vietnam</h2>
+        <div>
+          <div className={`w-full`}>
+            <h2>Hi, i am</h2>
+            <h1 className={classNames(`text-neutral-100`, `font-bold`)}>
+              Nguyễn Huỳnh Nguyên
+            </h1>
+            <h2>a Software Engineering from Vietnam</h2>
+          </div>
+          {/* Mini showcase */}
+          <ShowcaseBox />
         </div>
         <div
           className={`absolute top-12 md:top-32 h-full md:min-h-[40vh] border-l-2 ml-6 md:ml-16 border-l-neutral-500 border-dashed`}
         ></div>
       </div>
-      {/* Mini showcase */}
-      <ShowcaseBox />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useMouseDown } from "../../hooks/useMouseDown";
 import { Queue } from "../../utils/Queue";
 import Button from "../Button/Button";
+import CountButton from "../CountButton/CountButton";
 
 export interface MazeProps {
   width: number;
@@ -15,6 +16,7 @@ export enum NodeType {
   VISITED,
   DESTINATION,
   SOURCE,
+  PATH,
 }
 
 export interface Point {
@@ -146,6 +148,12 @@ export default function GraphMaze(props: MazeProps) {
     return Math.sqrt(x * x + y * y);
   };
 
+  const diagonalDistance = (a: Point, b: Point) => {
+    let dx = Math.abs(b.x - a.x);
+    let dy = Math.abs(b.y - a.x);
+    return 1 * (dx + dy) + (Math.SQRT2 - 2 * 1) * Math.min(dx, dy);
+  };
+
   const findShortestAStar = (
     source: Point,
     destination: Point,
@@ -185,7 +193,8 @@ export default function GraphMaze(props: MazeProps) {
         y: 0,
       },
     };
-
+    // const vDirection = [-1, 0, 1, 0];
+    // const hDirection = [0, 1, 0, -1];
     const vDirection = [-1, 0, 1, 0, -1, 1, 1, -1];
     const hDirection = [0, 1, 0, -1, 1, 1, -1, -1];
 
@@ -203,8 +212,9 @@ export default function GraphMaze(props: MazeProps) {
           x: p.point.x + vDirection[i],
           y: p.point.y + hDirection[i],
         };
-
+        // If reach the destination, store the last detail for back-tracking
         if (nextPoint.x === destination.x && nextPoint.y === destination.y) {
+          detail[nextPoint.y][nextPoint.x].parent = p.point;
           clearInterval(intervalId);
           return;
         }
@@ -244,6 +254,34 @@ export default function GraphMaze(props: MazeProps) {
         }
       }
     }, visualOptions.speed);
+
+    // const path: Point[] = [];
+    // let currentLocation: Point = destination;
+    // let currentDetail = detail[currentLocation.y][currentLocation.x];
+    // // console.log(currentLocation, currentDetail);
+    // while (
+    //   !(
+    //     currentDetail.parent.x === currentLocation.x &&
+    //     currentDetail.parent.y === currentLocation.y
+    //   )
+    // ) {
+    //   path.push(currentLocation);
+    //   let tempLocation = currentDetail.parent;
+    //   currentLocation = tempLocation;
+    // }
+    // // console.log(path);
+
+    // path.push(currentLocation);
+    // while (path.length > 0) {
+    //   let p = path[0];
+    //   path.shift();
+
+    //   // console.log(p);
+    //   // // if (p.x ==)
+    //   if (getNodeType(p.x, p.y) !== NodeType.DESTINATION) {
+    //     setNodeType(p.x, p.y, NodeType.PATH);
+    //   }
+    // }
   };
 
   const resetGraph = () => {
@@ -319,7 +357,8 @@ export default function GraphMaze(props: MazeProps) {
                 >
                   {(x === NodeType.VISITED ||
                     x === NodeType.DESTINATION ||
-                    x === NodeType.SOURCE) && (
+                    x === NodeType.SOURCE ||
+                    x === NodeType.PATH) && (
                     <div
                       className={classNames(
                         `absolute h-2 w-2 top-1/4 left-1/4`,
@@ -328,6 +367,7 @@ export default function GraphMaze(props: MazeProps) {
                           "bg-yellow-600 bg-opacity-25": x === NodeType.VISITED,
                           "bg-green-600": x === NodeType.DESTINATION,
                           "bg-blue-600": x === NodeType.SOURCE,
+                          "bg-pink-600": x === NodeType.PATH,
                         }
                       )}
                     ></div>
@@ -422,15 +462,45 @@ export default function GraphMaze(props: MazeProps) {
       </div>
 
       <div className="flex flex-row gap-4 items-center text-neutral-500">
+        {/* Visualize options */}
+        <div className={`text-sm flex flex-row items-center gap-4`}>
+          <div className={`flex flex-row items-center`}>
+            <CountButton
+              value={visualOptions.speed}
+              onIncrease={() => {
+                setVisualOptions((options) => {
+                  if (options.speed % 10 !== 0) {
+                    return {
+                      ...options,
+                      speed: options.speed - (options.speed % 10) + 10,
+                    };
+                  }
+                  return { ...options, speed: options.speed + 10 };
+                });
+              }}
+              onDecrease={() => {
+                setVisualOptions((options) => {
+                  // Cancel if the speed is zero
+                  if (options.speed - 10 <= 0) return { ...options, speed: 1 };
+                  return { ...options, speed: options.speed - 10 };
+                });
+              }}
+            />
+          </div>
+          <span> ms / tick</span>
+        </div>
+
+        {/*  */}
         <div className={`text-sm`}>
           <span></span>
           <span>Distance: {estimateDistance.toFixed(2)}</span>
           <span> points</span>
         </div>
+
         <Button onClick={() => resetGraph()} text="Reset" />
         {/* <button>Maze</button> */}
         <Button
-          text={"BFS"}
+          text={"Bread-First Search"}
           onClick={() => {
             resetGraph();
             setVisualAbortController(new AbortController());
