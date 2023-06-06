@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import IntroductionHero from "./components/IntroductionHero/IntroductionHero";
+import classNames from "classnames";
 
 export default function App() {
   return (
@@ -8,8 +9,10 @@ export default function App() {
       {/* Header */}
       <Header />
 
-      {/* Hero introduction thumbnail */}
-      <IntroductionHero />
+      <div className={classNames(`mt-12`)}>
+        {/* Hero introduction thumbnail */}
+        <IntroductionHero />
+      </div>
     </div>
   );
 }

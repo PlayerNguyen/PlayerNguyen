@@ -35,7 +35,7 @@ export default function ShowcaseBox() {
           `px-2`
         )}
       >
-        <GraphMaze width={48} height={16} />
+        <GraphMaze width={32} height={32} />
       </div>
     </div>
   );
