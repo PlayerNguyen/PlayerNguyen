@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "projects": "Dự án",
+    "about": "Giới thiệu",
+    "blog": "Blog",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title": "Player Nguyen",
+    "subtitle": "Kỹ sư Công nghệ Thông tin",
+    "bio": "Sinh viên năm ba đam mê xây dựng các ứng dụng web với React và Express.",
+    "cta_projects": "Xem Dự án",
+    "cta_contact": "Liên hệ"
+  },
+  "skills": {
+    "title": "Kỹ năng & Công nghệ",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Công cụ"
+  },
+  "projects": {
+    "title": "Dự án",
+    "subtitle": "Những sản phẩm đã xây dựng",
+    "all": "Tất cả",
+    "web": "Web",
+    "mobile": "Di động",
+    "tools_category": "Công cụ",
+    "view_github": "GitHub",
+    "view_live": "Xem trực tiếp",
+    "no_projects": "Không có dự án nào",
+    "items": {
+      "portfolio": {
+        "title": "Trang Portfolio",
+        "description": "Portfolio cá nhân được xây dựng với React, TypeScript và Tailwind CSS. Hỗ trợ song ngữ, hiệu ứng mượt mà và thiết kế tối giản."
+      },
+      "express_api": {
+        "title": "Express API Boilerplate",
+        "description": "Một starter API Express sẵn sàng cho production với PostgreSQL, Docker, xác thực và xử lý lỗi toàn diện."
+      },
+      "java_tool": {
+        "title": "Java CLI Tool",
+        "description": "Công cụ dòng lệnh xây dựng với Java và Spring Boot để tự động hóa các tác vụ phát triển lặp đi lặp lại."
+      }
+    }
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "subtitle": "Hành trình của tôi",
+    "bio": "Tôi là sinh viên năm ba với niềm đam mê về kỹ thuật phần mềm. Tôi chuyên xây dựng các ứng dụng full-stack với React, TypeScript và Node.js. Tôi thích giải quyết các vấn đề phức tạp và không ngừng học hỏi công nghệ mới.",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Suy nghĩ và ghi chép",
+    "read_more": "Đọc tiếp",
+    "back": "Quay lại Blog",
+    "no_posts": "Chưa có bài viết nào",
+    "published_on": "Đăng ngày",
+    "items": {
+      "react_start": {
+        "title": "Bắt đầu với React",
+        "excerpt": "Hướng dẫn cơ bản về React components, state và props.",
+        "content": "React là một thư viện JavaScript để xây dựng giao diện người dùng. Đây là nội dung placeholder cho bài viết đầy đủ."
+      },
+      "ts_tips": {
+        "title": "Mẹo TypeScript cho người mới",
+        "excerpt": "Các mẹo TypeScript thực tế giúp viết code an toàn và sạch hơn.",
+        "content": "TypeScript bổ sung kiểu tĩnh cho JavaScript. Đây là nội dung placeholder cho bài viết đầy đủ."
+      }
+    }
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Tôi rất mong được nghe từ bạn",
+    "name_label": "Họ tên",
+    "name_placeholder": "Tên của bạn",
+    "email_label": "Email",
+    "email_placeholder": "email@cua-ban.com",
+    "subject_label": "Tiêu đề",
+    "subject_placeholder": "Nội dung chính?",
+    "message_label": "Nội dung",
+    "message_placeholder": "Lời nhắn của bạn...",
+    "submit": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "success": "Gửi tin nhắn thành công!",
+    "error": "Có lỗi xảy ra. Vui lòng thử lại.",
+    "validation_required": "Trường này bắt buộc",
+    "validation_email": "Vui lòng nhập email hợp lệ"
+  },
+  "footer": {
+    "copyright": "© {{year}} Player Nguyen. Đã đăng ký bản quyền.",
+    "back_to_top": "Lên đầu trang"
+  },
+  "not_found": {
+    "title": "Không tìm thấy trang",
+    "message": "Trang bạn đang tìm kiếm không tồn tại.",
+    "back_home": "Về trang chủ"
+  },
+  "timeline": {
+    "items": {
+      "university": {
+        "date": "2022 - Hiện tại",
+        "title": "Sinh viên Công nghệ Thông tin",
+        "description": "Theo học ngành Khoa học Máy tính, tập trung vào kỹ thuật phần mềm, thuật toán và phát triển web."
+      },
+      "self_study": {
+        "date": "2023 - Hiện tại",
+        "title": "Tự học",
+        "description": "Xây dựng các dự án thực tế với React, TypeScript, Node.js và khám phá công nghệ đám mây."
+      }
+    }
+  }
+}

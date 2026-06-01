@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Player Nguyen",
+    "subtitle": "Computer Science Engineer",
+    "bio": "Third-year university student dedicated to building React, Express applications.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Get in Touch"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Others"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things I've built",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "tools_category": "Tools",
+    "view_github": "GitHub",
+    "view_live": "Live Demo",
+    "no_projects": "No projects found",
+    "items": {
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "A personal portfolio built with React, TypeScript, and Tailwind CSS. Features bilingual support, smooth animations, and a clean design."
+      },
+      "express_api": {
+        "title": "Express API Boilerplate",
+        "description": "A production-ready Express API starter with PostgreSQL, Docker, authentication, and comprehensive error handling."
+      },
+      "java_tool": {
+        "title": "Java CLI Tool",
+        "description": "A command-line tool built with Java and Spring Boot for automating repetitive development tasks."
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My journey",
+    "bio": "I'm a third-year university student passionate about software engineering. I specialize in building full-stack applications with React, TypeScript, and Node.js. I enjoy solving complex problems and continuously learning new technologies.",
+    "experience": "Experience",
+    "education": "Education"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts and notes",
+    "read_more": "Read More",
+    "back": "Back to Blog",
+    "no_posts": "No posts yet",
+    "published_on": "Published on",
+    "items": {
+      "react_start": {
+        "title": "Getting Started with React",
+        "excerpt": "A beginner-friendly guide to understanding React components, state, and props.",
+        "content": "React is a JavaScript library for building user interfaces. This is a placeholder for the full blog post content."
+      },
+      "ts_tips": {
+        "title": "TypeScript Tips for Beginners",
+        "excerpt": "Practical TypeScript tips to write safer and cleaner code.",
+        "content": "TypeScript adds static typing to JavaScript. This is a placeholder for the full blog post content."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "I'd love to hear from you",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your@email.com",
+    "subject_label": "Subject",
+    "subject_placeholder": "What's this about?",
+    "message_label": "Message",
+    "message_placeholder": "Your message...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again.",
+    "validation_required": "This field is required",
+    "validation_email": "Please enter a valid email"
+  },
+  "footer": {
+    "copyright": "© {{year}} Player Nguyen. All rights reserved.",
+    "back_to_top": "Back to Top"
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist.",
+    "back_home": "Go Home"
+  },
+  "timeline": {
+    "items": {
+      "university": {
+        "date": "2022 - Present",
+        "title": "Computer Science Student",
+        "description": "Pursuing a degree in Computer Science, focusing on software engineering, algorithms, and web development."
+      },
+      "self_study": {
+        "date": "2023 - Present",
+        "title": "Self-directed Learning",
+        "description": "Building real-world projects with React, TypeScript, Node.js, and exploring cloud technologies."
+      }
+    }
+  }
+}
