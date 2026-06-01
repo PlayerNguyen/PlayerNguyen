@@ -3,7 +3,6 @@ import HeroSection from "@/sections/HeroSection";
 import SkillsSection from "@/sections/SkillsSection";
 import ProjectsSection from "@/sections/ProjectsSection";
 import AboutSection from "@/sections/AboutSection";
-import ContactSection from "@/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       <AboutSection />
-      <ContactSection />
     </>
   );
 }

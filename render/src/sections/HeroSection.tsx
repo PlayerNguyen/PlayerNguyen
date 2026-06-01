@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   SiReact,
@@ -28,9 +28,20 @@ const floatingIcons = [
 
 export default function HeroSection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function scrollTo(id: string) {
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
-    <section className="relative min-h-screen flex items-center bg-canvas pt-14">
+    <section id="hero" className="relative min-h-screen flex items-center bg-canvas pt-14">
       {/* Floating icons — only in hero section */}
       <div className="absolute inset-0 z-0">
         {floatingIcons.map(({ Icon, left, top, size, color }, i) => (
@@ -83,12 +94,7 @@ export default function HeroSection() {
               {t("hero.bio")}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to="/projects">
-                <Button variant="primary">{t("hero.cta_projects")}</Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="secondary">{t("hero.cta_contact")}</Button>
-              </Link>
+              <Button variant="primary" onClick={() => scrollTo("projects")}>{t("hero.cta_projects")}</Button>
             </div>
             <div className="mt-8 flex justify-center lg:justify-start">
               <SocialLinks links={socialLinks} size="md" />

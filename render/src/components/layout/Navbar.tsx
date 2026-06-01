@@ -16,12 +16,13 @@ interface RouteLink {
 
 type NavItem = SectionLink | RouteLink;
 
+const sectionIds = ["hero", "projects", "about"];
+
 const navItems: NavItem[] = [
   { labelKey: "nav.home", sectionId: "hero" } as SectionLink,
   { labelKey: "nav.projects", sectionId: "projects" } as SectionLink,
   { labelKey: "nav.about", sectionId: "about" } as SectionLink,
   { labelKey: "nav.blog", path: "/blog" } as RouteLink,
-  { labelKey: "nav.contact", sectionId: "contact" } as SectionLink,
 ];
 
 function isSectionLink(item: NavItem): item is SectionLink {
@@ -31,6 +32,7 @@ function isSectionLink(item: NavItem): item is SectionLink {
 export default function Navbar() {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -38,10 +40,35 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [location]);
 
+  // Track which section is in view
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
   const isActive = (item: NavItem): boolean => {
     if (isSectionLink(item)) {
-      if (item.sectionId === "hero") return location.pathname === "/" && location.hash === "";
-      return location.pathname === "/" && location.hash === `#${item.sectionId}`;
+      return location.pathname === "/" && activeSection === item.sectionId;
     }
     return location.pathname === item.path;
   };
