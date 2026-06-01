@@ -11,9 +11,9 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen pt-24 pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <SEO titleKey="about.title" description="About Player Nguyen" />
+    <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
+      <div className="max-w-content mx-auto">
+        <SEO titleKey="about.title" description="About Nguyễn Huỳnh Nguyên" />
         <SectionHeading titleKey="about.title" subtitleKey="about.subtitle" />
 
         {/* Bio */}
@@ -24,7 +24,7 @@ export default function About() {
           className="mb-16"
         >
           <Card>
-            <p className="text-lg text-zinc-300 leading-relaxed">
+            <p className="text-lg text-ink leading-relaxed">
               {t("about.bio")}
             </p>
           </Card>
@@ -37,20 +37,20 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          <h3 className="text-h3 text-center mb-8 text-ink font-brand">
             {t("skills.title")}
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {skillCategories.map((cat) => (
               <Card key={cat.key}>
-                <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-4">
+                <h4 className="text-eyebrow text-light-signal-orange uppercase mb-4">
                   {t(`skills.${cat.key}`)}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill.name}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-700/50 text-sm text-zinc-300"
+                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-canvas-soft text-body-sm text-ink border border-hairline"
                     >
                       <skill.icon className="text-base" />
                       {skill.name}
@@ -68,13 +68,13 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          <h3 className="text-h3 text-center mb-8 text-ink font-brand">
             {t("about.experience")} & {t("about.education")}
           </h3>
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-zinc-700 -translate-x-1/2" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-hairline -translate-x-1/2" />
 
             <div className="space-y-12">
               {timelineEvents.map((event, i) => {
@@ -90,28 +90,28 @@ export default function About() {
                     }`}
                   >
                     {/* Dot */}
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-purple-500 border-4 border-zinc-900 -translate-x-1/2 z-10 mt-6" />
+                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary -translate-x-1/2 z-10 mt-6" />
 
                     {/* Content */}
                     <div className={`ml-10 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12" : "md:pl-12"}`}>
                       <div className="flex items-center gap-2 mb-2">
                         {event.type === "education" ? (
-                          <FiBookOpen className="text-purple-400" />
+                          <FiBookOpen className="text-light-signal-orange" />
                         ) : (
-                          <FiBriefcase className="text-pink-400" />
+                          <FiBriefcase className="text-light-signal-orange" />
                         )}
-                        <span className="text-sm text-zinc-500">
+                        <span className="text-sm text-slate-gray">
                           {t(event.dateKey)}
                         </span>
                       </div>
                       <Card>
-                        <h4 className="text-lg font-bold text-white">
+                        <h4 className="text-lg font-bold text-ink">
                           {t(event.titleKey)}
                         </h4>
-                        <p className="text-sm text-zinc-400 mt-1">
+                        <p className="text-sm text-slate-gray mt-1">
                           {event.institution}
                         </p>
-                        <p className="text-sm text-zinc-500 mt-2">
+                        <p className="text-sm text-slate-gray mt-2">
                           {t(event.descriptionKey)}
                         </p>
                       </Card>

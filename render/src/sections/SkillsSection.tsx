@@ -20,8 +20,8 @@ export default function SkillsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-section-y px-gutter bg-canvas border-t border-hairline">
+      <div className="max-w-content mx-auto">
         <SectionHeading titleKey="skills.title" />
 
         <motion.div
@@ -29,24 +29,25 @@ export default function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {skillCategories.map((cat) => (
             <motion.div
               key={cat.key}
               variants={itemVariants}
-              className="rounded-2xl bg-zinc-800/50 border border-zinc-700/50 p-6 hover:border-zinc-500/50 transition-colors"
+              className="bg-canvas border border-hairline rounded-md p-6"
             >
-              <h3 className="text-lg font-semibold text-purple-400 mb-4">
+              <h3 className="text-eyebrow-mono text-primary uppercase tracking-[2.52px] mb-4">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mr-2" />
                 {t(`skills.${cat.key}`)}
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-700/50 text-sm text-zinc-300"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-canvas-soft text-body-sm text-ink border border-hairline"
                   >
-                    <skill.icon className="text-lg" />
+                    <skill.icon className="text-base text-primary/80" />
                     {skill.name}
                   </span>
                 ))}

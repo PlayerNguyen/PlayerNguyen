@@ -7,9 +7,9 @@
     "contact": "Liên hệ"
   },
   "hero": {
-    "title": "Player Nguyen",
-    "subtitle": "Kỹ sư Công nghệ Thông tin",
-    "bio": "Sinh viên năm ba đam mê xây dựng các ứng dụng web với React và Express.",
+    "title": "Nguyễn Huỳnh Nguyên",
+    "subtitle": "Kỹ sư Phần mềm",
+    "bio": "Kỹ sư phần mềm tại Netcompany, kiến trúc các ứng dụng doanh nghiệp mở rộng và tích hợp quy trình AI tác nhân.",
     "cta_projects": "Xem Dự án",
     "cta_contact": "Liên hệ"
   },
@@ -17,7 +17,8 @@
     "title": "Kỹ năng & Công nghệ",
     "frontend": "Frontend",
     "backend": "Backend",
-    "tools": "Công cụ"
+    "ai_emerging": "AI & Công nghệ mới",
+    "tools": "Công cụ & Hạ tầng"
   },
   "projects": {
     "title": "Dự án",
@@ -47,7 +48,7 @@
   "about": {
     "title": "Giới thiệu",
     "subtitle": "Hành trình của tôi",
-    "bio": "Tôi là sinh viên năm ba với niềm đam mê về kỹ thuật phần mềm. Tôi chuyên xây dựng các ứng dụng full-stack với React, TypeScript và Node.js. Tôi thích giải quyết các vấn đề phức tạp và không ngừng học hỏi công nghệ mới.",
+    "bio": "Kỹ sư phần mềm tại Netcompany với kinh nghiệm kiến trúc ứng dụng web doanh nghiệp, dẫn dắt nhóm đa chức năng và tích hợp quy trình AI tác nhân. Tôi chuyên về Java, Spring Boot, React và TypeScript, và đam mê đóng góp mã nguồn mở cho các framework như Hono và Elysia.",
     "experience": "Kinh nghiệm",
     "education": "Học vấn"
   },
@@ -74,6 +75,8 @@
   "contact": {
     "title": "Liên hệ",
     "subtitle": "Tôi rất mong được nghe từ bạn",
+    "info_title": "Thông tin liên hệ",
+    "social_title": "Mạng xã hội",
     "name_label": "Họ tên",
     "name_placeholder": "Tên của bạn",
     "email_label": "Email",
@@ -90,7 +93,7 @@
     "validation_email": "Vui lòng nhập email hợp lệ"
   },
   "footer": {
-    "copyright": "© {{year}} Player Nguyen. Đã đăng ký bản quyền.",
+    "copyright": "© {{year}} Nguyễn Huỳnh Nguyên. Đã đăng ký bản quyền.",
     "back_to_top": "Lên đầu trang"
   },
   "not_found": {
@@ -100,15 +103,40 @@
   },
   "timeline": {
     "items": {
-      "university": {
-        "date": "2022 - Hiện tại",
-        "title": "Sinh viên Công nghệ Thông tin",
-        "description": "Theo học ngành Khoa học Máy tính, tập trung vào kỹ thuật phần mềm, thuật toán và phát triển web."
+      "netcompany": {
+        "date": "Thg 1, 2025 - Hiện tại",
+        "title": "Kỹ sư Phần mềm",
+        "description": "Đóng góp từ đầu vào Amplio Life & Pension (ALP), ứng dụng xử lý hồ sơ cấp công nghiệp châu Âu. Thiết kế tích hợp SDK cho lưu trữ đối tượng tương thích S3, Kafka và hộp thư nội bộ. Xây dựng tích hợp Outlook Calendar hiệu suất cao với Hazelcast. Dẫn dắt tích hợp quy trình AI tác nhân, giảm thời gian sửa lỗi 40%. Hướng dẫn 6-7 lập trình viên và dẫn dắt nhóm review code đa chức năng."
       },
-      "self_study": {
-        "date": "2023 - Hiện tại",
-        "title": "Tự học",
-        "description": "Xây dựng các dự án thực tế với React, TypeScript, Node.js và khám phá công nghệ đám mây."
+      "nodesign": {
+        "date": "Thg 4, 2025 - Hiện tại",
+        "title": "Full Stack Engineer",
+        "description": "Phát triển full-stack freelance, cung cấp ứng dụng web từ đầu đến cuối cho khách hàng từ xa."
+      },
+      "smatyx": {
+        "date": "Thg 6, 2023 - Thg 2, 2024",
+        "title": "Junior Frontend Developer",
+        "description": "Triển khai giao diện web đa người dùng có khả năng mở rộng với React và TypeScript. Xây dựng các mẫu component tái sử dụng với Ant Design, tăng hiệu suất phát triển 25%."
+      },
+      "saigontv": {
+        "date": "Thg 6, 2023 - Thg 2, 2024",
+        "title": "Full Stack Engineer Tự do",
+        "description": "Phát triển nền tảng tin tức trực tuyến thân thiện SEO và CMS sử dụng React và Bun, với thiết lập Docker."
+      },
+      "fpt_software": {
+        "date": "Thg 4, 2023 - Thg 6, 2023",
+        "title": "Thực tập sinh Frontend Developer",
+        "description": "Triển khai ứng dụng career hub phía client sử dụng React tại FPT Software Academy."
+      },
+      "mindx": {
+        "date": "Thg 4, 2022 - Thg 3, 2023",
+        "title": "Mentor",
+        "description": "Hướng dẫn thanh thiếu niên và trẻ em về lập trình thông qua Scratch, cấu trúc dữ liệu và các khái niệm liên quan tại MindX Technology School."
+      },
+      "education": {
+        "date": "Thg 9, 2020 - Thg 9, 2024",
+        "title": "Cử nhân Công nghệ Thông tin",
+        "description": "Tốt nghiệp từ Đại học Quốc tế - Đại học Quốc gia HCM. Tham gia IU Hackathon và nghiên cứu Computer Vision tập trung vào công nghệ AIoT tại trường."
       }
     }
   }

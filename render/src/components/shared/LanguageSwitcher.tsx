@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="px-3 py-1.5 rounded-lg text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors border border-zinc-600"
+      className="px-3 py-1.5 rounded-sm text-body-sm text-body hover:text-ink border border-hairline hover:border-ink transition-colors"
       aria-label="Switch language"
     >
       {current === "en" ? "VI" : "EN"}

@@ -20,7 +20,7 @@ export default function SocialLinks({ links, size = "md" }: SocialLinksProps) {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${sizeMap[size]} text-zinc-400 hover:text-white transition-colors`}
+          className={`${sizeMap[size]} text-mute hover:text-primary transition-colors`}
           aria-label={link.label}
         >
           <link.icon />

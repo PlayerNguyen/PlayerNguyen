@@ -1,23 +1,27 @@
 import {
   SiReact,
+  SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiNodedotjs,
   SiExpress,
-  SiPostgresql,
-  SiMongodb,
-  SiGit,
-  SiDocker,
-  SiFigma,
   SiSpringboot,
   SiPython,
-  SiPhp,
+  SiOpenjdk,
+  SiBun,
+  SiHono,
+  SiPostgresql,
+  SiRedis,
+  SiApachekafka,
+  SiDocker,
+  SiGit,
 } from "react-icons/si";
+import { FiDatabase, FiCloud, FiCpu } from "react-icons/fi";
 import type { IconType } from "react-icons";
 
 interface SkillCategory {
   key: string;
-  skills: { name: string; icon: IconType; category: "frontend" | "backend" | "tools" }[];
+  skills: { name: string; icon: IconType; category: "frontend" | "backend" | "ai_emerging" | "tools" }[];
 }
 
 export const skillCategories: SkillCategory[] = [
@@ -25,6 +29,7 @@ export const skillCategories: SkillCategory[] = [
     key: "frontend",
     skills: [
       { name: "React", icon: SiReact, category: "frontend" },
+      { name: "Next.js", icon: SiNextdotjs, category: "frontend" },
       { name: "TypeScript", icon: SiTypescript, category: "frontend" },
       { name: "Tailwind CSS", icon: SiTailwindcss, category: "frontend" },
     ],
@@ -32,21 +37,33 @@ export const skillCategories: SkillCategory[] = [
   {
     key: "backend",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, category: "backend" },
-      { name: "Express", icon: SiExpress, category: "backend" },
+      { name: "Java", icon: SiOpenjdk, category: "backend" },
       { name: "Spring Boot", icon: SiSpringboot, category: "backend" },
+      { name: "Node.js", icon: SiNodedotjs, category: "backend" },
+      { name: "ExpressJS", icon: SiExpress, category: "backend" },
       { name: "Python", icon: SiPython, category: "backend" },
-      { name: "PHP", icon: SiPhp, category: "backend" },
+      { name: "Hono", icon: SiHono, category: "backend" },
+      { name: "Bun", icon: SiBun, category: "backend" },
+    ],
+  },
+  {
+    key: "ai_emerging",
+    skills: [
+      { name: "Agentic AI", icon: FiCpu, category: "ai_emerging" },
+      { name: "LLM Integration", icon: FiCpu, category: "ai_emerging" },
+      { name: "Elysia", icon: FiCpu, category: "ai_emerging" },
     ],
   },
   {
     key: "tools",
     skills: [
-      { name: "PostgreSQL", icon: SiPostgresql, category: "tools" },
-      { name: "MongoDB", icon: SiMongodb, category: "tools" },
-      { name: "Git", icon: SiGit, category: "tools" },
       { name: "Docker", icon: SiDocker, category: "tools" },
-      { name: "Figma", icon: SiFigma, category: "tools" },
+      { name: "PostgreSQL", icon: SiPostgresql, category: "tools" },
+      { name: "Kafka", icon: SiApachekafka, category: "tools" },
+      { name: "Redis", icon: SiRedis, category: "tools" },
+      { name: "Hazelcast", icon: FiDatabase, category: "tools" },
+      { name: "S3 Storage", icon: FiCloud, category: "tools" },
+      { name: "Git", icon: SiGit, category: "tools" },
     ],
   },
 ];

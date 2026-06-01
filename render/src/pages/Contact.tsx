@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FiMail } from "react-icons/fi";
 import SEO from "@/components/shared/SEO";
@@ -7,11 +8,12 @@ import { socialLinks } from "@/data/social";
 import ContactForm from "@/sections/ContactForm";
 
 export default function Contact() {
+  const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen pt-24 pb-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <SEO titleKey="contact.title" description="Contact Player Nguyen" />
+    <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
+      <div className="max-w-content mx-auto">
+        <SEO titleKey="contact.title" description="Contact Nguyễn Huỳnh Nguyên" />
         <SectionHeading titleKey="contact.title" subtitleKey="contact.subtitle" />
 
         <div className="grid md:grid-cols-5 gap-8 mt-8">
@@ -30,21 +32,21 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="md:col-span-2 space-y-8"
           >
-            <div className="rounded-2xl bg-zinc-800/50 border border-zinc-700/50 p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Contact Info</h3>
+            <div className="bg-canvas border border-hairline rounded-md p-6">
+              <h3 className="text-display-sm text-ink-strong mb-4">{t("contact.info_title")}</h3>
               <div className="space-y-4">
                 <a
                   href="mailto:nhnguyen.forwork@gmail.com"
-                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-body hover:text-ink transition-colors"
                 >
-                  <FiMail className="text-purple-400" />
+                  <FiMail className="text-primary" />
                   nhnguyen.forwork@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-zinc-800/50 border border-zinc-700/50 p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Social</h3>
+            <div className="bg-canvas border border-hairline rounded-md p-6">
+              <h3 className="text-display-sm text-ink-strong mb-4">{t("contact.social_title")}</h3>
               <SocialLinks links={socialLinks} size="lg" />
             </div>
           </motion.div>

@@ -10,11 +10,11 @@ export default function SectionHeading({ titleKey, subtitleKey }: SectionHeading
 
   return (
     <div className="mb-12 text-center">
-      <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+      <h2 className="text-display-lg text-ink-strong">
         {t(titleKey)}
       </h2>
       {subtitleKey && (
-        <p className="mt-3 text-lg text-zinc-400">{t(subtitleKey)}</p>
+        <p className="mt-3 text-body-lg text-body">{t(subtitleKey)}</p>
       )}
     </div>
   );

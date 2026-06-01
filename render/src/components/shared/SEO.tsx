@@ -8,7 +8,7 @@ interface SEOProps {
 
 export default function SEO({ titleKey, description }: SEOProps) {
   const { t } = useTranslation();
-  const defaultTitle = "Player Nguyen";
+  const defaultTitle = "Nguyễn Huỳnh Nguyên";
   const pageTitle = titleKey ? `${t(titleKey)} | ${defaultTitle}` : defaultTitle;
 
   return (

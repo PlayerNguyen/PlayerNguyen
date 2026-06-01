@@ -7,9 +7,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Player Nguyen",
-    "subtitle": "Computer Science Engineer",
-    "bio": "Third-year university student dedicated to building React, Express applications.",
+    "title": "Nguyễn Huỳnh Nguyên",
+    "subtitle": "Software Engineer",
+    "bio": "Software Engineer at Netcompany, architecting scalable enterprise applications and integrating Agentic AI workflows.",
     "cta_projects": "View Projects",
     "cta_contact": "Get in Touch"
   },
@@ -17,7 +17,8 @@
     "title": "Skills & Technologies",
     "frontend": "Frontend",
     "backend": "Backend",
-    "tools": "Tools & Others"
+    "ai_emerging": "AI & Emerging Tech",
+    "tools": "Tools & Infrastructure"
   },
   "projects": {
     "title": "Projects",
@@ -47,7 +48,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "My journey",
-    "bio": "I'm a third-year university student passionate about software engineering. I specialize in building full-stack applications with React, TypeScript, and Node.js. I enjoy solving complex problems and continuously learning new technologies.",
+    "bio": "Software Engineer at Netcompany with experience architecting enterprise web applications, leading cross-functional teams, and integrating Agentic AI workflows. I specialize in Java, Spring Boot, React, and TypeScript, and I'm passionate about open-source contributions to frameworks like Hono and Elysia.",
     "experience": "Experience",
     "education": "Education"
   },
@@ -74,6 +75,8 @@
   "contact": {
     "title": "Get in Touch",
     "subtitle": "I'd love to hear from you",
+    "info_title": "Contact Info",
+    "social_title": "Social",
     "name_label": "Name",
     "name_placeholder": "Your name",
     "email_label": "Email",
@@ -90,7 +93,7 @@
     "validation_email": "Please enter a valid email"
   },
   "footer": {
-    "copyright": "© {{year}} Player Nguyen. All rights reserved.",
+    "copyright": "© {{year}} Nguyễn Huỳnh Nguyên. All rights reserved.",
     "back_to_top": "Back to Top"
   },
   "not_found": {
@@ -100,15 +103,40 @@
   },
   "timeline": {
     "items": {
-      "university": {
-        "date": "2022 - Present",
-        "title": "Computer Science Student",
-        "description": "Pursuing a degree in Computer Science, focusing on software engineering, algorithms, and web development."
+      "netcompany": {
+        "date": "Jan 2025 - Present",
+        "title": "Software Engineer",
+        "description": "Contributed from scratch to Amplio Life & Pension (ALP), an industrial-level European case-handling web application. Designed core SDK integrations for S3-compatible object storage, Kafka, and internal mailbox. Built a high-performance Outlook Calendar integration with Hazelcast caching. Spearheaded Agentic AI workflow integrations, reducing bug-fixing turnaround by 40%. Mentored 6-7 developers and led cross-functional code review groups."
       },
-      "self_study": {
-        "date": "2023 - Present",
-        "title": "Self-directed Learning",
-        "description": "Building real-world projects with React, TypeScript, Node.js, and exploring cloud technologies."
+      "nodesign": {
+        "date": "Apr 2025 - Present",
+        "title": "Full Stack Engineer",
+        "description": "Freelance full-stack development, delivering end-to-end web applications for clients remotely."
+      },
+      "smatyx": {
+        "date": "Jun 2023 - Feb 2024",
+        "title": "Junior Frontend Developer",
+        "description": "Implemented a scalable, multi-tenant web UI using React and TypeScript. Built reusable component patterns with Ant Design, increasing development efficiency by 25%."
+      },
+      "saigontv": {
+        "date": "Jun 2023 - Feb 2024",
+        "title": "Freelance Full Stack Engineer",
+        "description": "Developed an SEO-friendly online news platform and CMS using React and Bun, backed by a containerized Docker setup."
+      },
+      "fpt_software": {
+        "date": "Apr 2023 - Jun 2023",
+        "title": "Intern Frontend Developer",
+        "description": "Implemented a client-side career hub application using React at FPT Software Academy."
+      },
+      "mindx": {
+        "date": "Apr 2022 - Mar 2023",
+        "title": "Mentor",
+        "description": "Taught teenagers and kids programming fundamentals via Scratch, data structures, and related concepts at MindX Technology School."
+      },
+      "education": {
+        "date": "Sep 2020 - Sep 2024",
+        "title": "Bachelor's in Information Technology",
+        "description": "Graduated from International University - National University, HCMC. Participated in IU Hackathon and served as a Computer Vision researcher focusing on AIoT technologies."
       }
     }
   }

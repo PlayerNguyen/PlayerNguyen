@@ -20,7 +20,7 @@ export interface Project {
 export interface Skill {
   name: string;
   icon: IconType;
-  category: "frontend" | "backend" | "tools";
+  category: "frontend" | "backend" | "tools" | "ai_emerging";
 }
 
 export interface TimelineEvent {

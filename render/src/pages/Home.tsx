@@ -5,7 +5,7 @@ import SkillsSection from "@/sections/SkillsSection";
 export default function Home() {
   return (
     <>
-      <SEO description="Player Nguyen - Computer Science Engineer portfolio" />
+      <SEO description="Nguyễn Huỳnh Nguyên - Software Engineer portfolio" />
       <HeroSection />
       <SkillsSection />
     </>

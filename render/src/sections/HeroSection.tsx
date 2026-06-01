@@ -1,114 +1,113 @@
-import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  SiFreecodecamp,
-  SiGithub,
-  SiGit,
   SiReact,
   SiTypescript,
+  SiGithub,
+  SiGit,
+  SiDocker,
+  SiNodedotjs,
+  SiSpringboot,
+  SiPostgresql,
 } from "react-icons/si";
 import Button from "@/components/ui/Button";
 import SocialLinks from "@/components/shared/SocialLinks";
 import { socialLinks } from "@/data/social";
 
 const floatingIcons = [
-  { Icon: SiFreecodecamp, x: "4vw", y: "12vh", color: "text-green-600", size: "text-6xl" },
-  { Icon: SiGithub, x: "18vw", y: "16vh", color: "text-zinc-300", size: "text-6xl" },
-  { Icon: SiGit, x: "32vw", y: "10vh", color: "text-orange-600", size: "text-6xl" },
-  { Icon: SiReact, x: "70vw", y: "14vh", color: "text-cyan-400", size: "text-5xl" },
-  { Icon: SiTypescript, x: "85vw", y: "20vh", color: "text-blue-500", size: "text-5xl" },
+  { Icon: SiReact, left: "3%", top: "15%", size: "text-4xl lg:text-5xl", color: "text-primary/40" },
+  { Icon: SiTypescript, left: "88%", top: "18%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
+  { Icon: SiGithub, left: "2%", top: "75%", size: "text-4xl lg:text-5xl", color: "text-ink/30" },
+  { Icon: SiGit, left: "90%", top: "72%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
+  { Icon: SiDocker, left: "48%", top: "5%", size: "text-3xl lg:text-4xl", color: "text-ink/30" },
+  { Icon: SiNodedotjs, left: "5%", top: "48%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
+  { Icon: SiSpringboot, left: "78%", top: "45%", size: "text-2xl lg:text-3xl", color: "text-primary/40" },
+  { Icon: SiPostgresql, left: "45%", top: "88%", size: "text-2xl lg:text-3xl", color: "text-ink/30" },
 ];
 
 export default function HeroSection() {
   const { t } = useTranslation();
-  const [scrollY, setScrollY] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleScroll() {
-      setScrollY(window.scrollY);
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-    >
-      {/* Floating icons */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        {floatingIcons.map(({ Icon, x, y, color, size }, i) => (
-          <div
+    <section className="relative min-h-screen flex items-center bg-canvas pt-14">
+      {/* Floating icons — only in hero section */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {floatingIcons.map(({ Icon, left, top, size, color }, i) => (
+          <motion.div
             key={i}
-            className={`absolute ${color} ${size}`}
-            style={{
-              left: x,
-              top: `calc(${y} + ${scrollY * (0.05 + i * 0.01)}px)`,
-              transition: "top 0.1s ease-out",
+            className={`absolute ${size} ${color}`}
+            style={{ left, top }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 0.4,
+              y: [0, -10, 0, 8, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.8, delay: i * 0.12 },
+              y: {
+                duration: 5 + (i % 3) * 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.5,
+              },
             }}
           >
             <Icon />
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 leading-tight">
-            {t("hero.title")}
-          </h1>
-        </motion.div>
+      <div className="relative z-10 w-full max-w-content mx-auto px-gutter">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          {/* Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <h3 className="text-eyebrow-mono text-primary tracking-[2.52px] mb-4">
+              {t("hero.subtitle").toUpperCase()}
+            </h3>
+            <h1 className="text-display-xl text-ink-strong font-sans">
+              {t("hero.title")}
+            </h1>
+            <p className="mt-6 text-body-lg text-body max-w-xl lg:max-w-none">
+              {t("hero.bio")}
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link to="/projects">
+                <Button variant="primary">{t("hero.cta_projects")}</Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="secondary">{t("hero.cta_contact")}</Button>
+              </Link>
+            </div>
+            <div className="mt-8 flex justify-center lg:justify-start">
+              <SocialLinks links={socialLinks} size="md" />
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h3 className="mt-4 text-xl md:text-2xl uppercase font-bold text-zinc-200">
-            {t("hero.subtitle")}
-          </h3>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-6 text-lg text-zinc-400 max-w-xl mx-auto"
-        >
-          {t("hero.bio")}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link to="/projects">
-            <Button variant="primary">{t("hero.cta_projects")}</Button>
-          </Link>
-          <Link to="/contact">
-            <Button variant="secondary">{t("hero.cta_contact")}</Button>
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8"
-        >
-          <SocialLinks links={socialLinks} size="lg" />
-        </motion.div>
+          {/* Right: Avatar */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden lg:flex justify-center items-center mt-12 lg:mt-0"
+          >
+            <div className="w-64 h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-2 border-hairline">
+              <picture>
+                <source srcSet="/avatar.webp" type="image/webp" />
+                <img
+                  src="/avatar.jpg"
+                  alt="Nguyễn Huỳnh Nguyên"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

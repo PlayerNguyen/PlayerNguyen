@@ -1,7 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { FiArrowUp } from "react-icons/fi";
-import SocialLinks from "@/components/shared/SocialLinks";
-import { socialLinks } from "@/data/social";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -11,23 +9,35 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-zinc-900/50 border-t border-zinc-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <SocialLinks links={socialLinks} size="sm" />
+    <footer className="bg-canvas border-t border-hairline">
+      <div className="max-w-content mx-auto px-gutter py-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-6">
+            <a href="mailto:nhnguyen.forwork@gmail.com" className="text-body-sm text-body hover:text-ink transition-colors">
+              nhnguyen.forwork@gmail.com
+            </a>
+            <span className="text-mute text-xs">·</span>
+            <a href="https://github.com/PlayerNguyen" target="_blank" rel="noopener noreferrer" className="text-body-sm text-body hover:text-ink transition-colors">
+              GitHub
+            </a>
+            <span className="text-mute text-xs">·</span>
+            <a href="https://www.linkedin.com/in/okuranguyen/" target="_blank" rel="noopener noreferrer" className="text-body-sm text-body hover:text-ink transition-colors">
+              LinkedIn
+            </a>
+          </div>
 
-          <p className="text-sm text-zinc-500">
-            {t("footer.copyright", { year: new Date().getFullYear() })}
-          </p>
-
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
-            aria-label={t("footer.back_to_top")}
-          >
-            {t("footer.back_to_top")}
-            <FiArrowUp size={16} />
-          </button>
+          <div className="flex items-center gap-4">
+            <p className="text-body-sm text-mute">
+              {t("footer.copyright", { year: new Date().getFullYear() })}
+            </p>
+            <button
+              onClick={scrollToTop}
+              className="text-body-sm text-body hover:text-ink transition-colors flex items-center gap-1"
+            >
+              {t("footer.back_to_top")}
+              <FiArrowUp size={14} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
