@@ -1,8 +1,8 @@
 import SEO from "@/components/shared/SEO";
-import HeroSection from "@/sections/HeroSection";
-import SkillsSection from "@/sections/SkillsSection";
-import ProjectsSection from "@/sections/ProjectsSection";
-import AboutSection from "@/sections/AboutSection";
+import AboutSection from "@/components/sections/AboutSection";
+import HeroSection from "@/components/sections/HeroSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import SkillsSection from "@/components/sections/SkillsSection";
 
 export default function Home() {
   return (

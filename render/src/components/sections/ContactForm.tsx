@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { type FormEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiSend } from "react-icons/fi";
 
@@ -26,7 +26,8 @@ export default function ContactForm() {
     const newErrors: FormErrors = {};
     if (!form.name.trim()) newErrors.name = t("contact.validation_required");
     if (!form.email.trim()) newErrors.email = t("contact.validation_required");
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = t("contact.validation_email");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      newErrors.email = t("contact.validation_email");
     if (!form.subject.trim()) newErrors.subject = t("contact.validation_required");
     if (!form.message.trim()) newErrors.message = t("contact.validation_required");
     setErrors(newErrors);
@@ -58,8 +59,11 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {(["name", "email", "subject"] as const).map((field) => (
         <div key={field}>
-          <label className="block text-body-sm text-body mb-1">{t(`contact.${field}_label`)}</label>
+          <label htmlFor={field} className="block text-body-sm text-body mb-1">
+            {t(`contact.${field}_label`)}
+          </label>
           <input
+            id={field}
             type={field === "email" ? "email" : "text"}
             value={form[field]}
             onChange={(e) => handleChange(field, e.target.value)}
@@ -72,8 +76,11 @@ export default function ContactForm() {
         </div>
       ))}
       <div>
-        <label className="block text-body-sm text-body mb-1">{t("contact.message_label")}</label>
+        <label htmlFor="message" className="block text-body-sm text-body mb-1">
+          {t("contact.message_label")}
+        </label>
         <textarea
+          id="message"
           rows={5}
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}
@@ -92,8 +99,12 @@ export default function ContactForm() {
         <FiSend size={16} />
         {status === "sending" ? t("contact.sending") : t("contact.submit")}
       </button>
-      {status === "success" && <p className="text-body-sm text-center text-primary">{t("contact.success")}</p>}
-      {status === "error" && <p className="text-body-sm text-center text-primary">{t("contact.error")}</p>}
+      {status === "success" && (
+        <p className="text-body-sm text-center text-primary">{t("contact.success")}</p>
+      )}
+      {status === "error" && (
+        <p className="text-body-sm text-center text-primary">{t("contact.error")}</p>
+      )}
     </form>
   );
 }

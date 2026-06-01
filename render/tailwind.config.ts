@@ -21,14 +21,26 @@ export default {
       },
       fontFamily: {
         sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
-        mono: ['"SF Mono"', "SFMono-Regular", "Menlo", "Monaco", "Consolas", '"Liberation Mono"', "Courier New", "monospace"],
+        mono: [
+          '"SF Mono"',
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          '"Liberation Mono"',
+          "Courier New",
+          "monospace",
+        ],
       },
       fontSize: {
         "display-xl": ["60px", { lineHeight: "60px", fontWeight: "400", letterSpacing: "-0.65px" }],
         "display-lg": ["36px", { lineHeight: "40px", fontWeight: "400", letterSpacing: "-0.9px" }],
         "display-md": ["24px", { lineHeight: "32px", fontWeight: "700", letterSpacing: "-0.6px" }],
         "display-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
-        "eyebrow-mono": ["14px", { lineHeight: "20px", fontWeight: "600", letterSpacing: "2.52px" }],
+        "eyebrow-mono": [
+          "14px",
+          { lineHeight: "20px", fontWeight: "600", letterSpacing: "2.52px" },
+        ],
         "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
         "body-md": ["16px", { lineHeight: "26px", fontWeight: "400" }],
         "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],

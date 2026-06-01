@@ -77,12 +77,7 @@
     "education": "Học vấn"
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "Suy nghĩ và ghi chép",
-    "read_more": "Đọc tiếp",
-    "back": "Quay lại Blog",
-    "no_posts": "Chưa có bài viết nào",
-    "published_on": "Đăng ngày"
+    "title": "Blog"
   },
   "contact": {
     "title": "Liên hệ",

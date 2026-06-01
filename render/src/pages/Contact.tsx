@@ -1,12 +1,12 @@
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FiMail } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
 import PageContainer from "@/components/shared/PageContainer";
-import SectionHeading from "@/components/ui/SectionHeading";
+import SEO from "@/components/shared/SEO";
 import SocialLinks from "@/components/shared/SocialLinks";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { socialLinks } from "@/data/social";
-import ContactForm from "@/sections/ContactForm";
+import ContactForm from "@/components/sections/ContactForm";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -52,7 +52,7 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
-        </PageContainer>
+      </PageContainer>
     </section>
   );
 }

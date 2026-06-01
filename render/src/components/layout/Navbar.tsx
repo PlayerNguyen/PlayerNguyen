@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
-import { FiMenu, FiX } from "react-icons/fi";
 
 interface SectionLink {
   labelKey: string;
@@ -38,7 +38,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   // Track which section is in view
   useEffect(() => {
@@ -87,9 +87,7 @@ export default function Navbar() {
   const renderLink = (item: NavItem) => {
     const active = isActive(item);
     const classes = `px-3 py-2 rounded-sm text-body-sm transition-colors ${
-      active
-        ? "text-ink-strong bg-ink/5"
-        : "text-body hover:text-ink hover:bg-ink/5"
+      active ? "text-ink-strong bg-ink/5" : "text-body hover:text-ink hover:bg-ink/5"
     }`;
 
     if (isSectionLink(item)) {
@@ -127,15 +125,14 @@ export default function Navbar() {
             Nguyễn Huỳnh Nguyên
           </a>
 
-          <nav className="hidden md:flex items-center gap-1">
-            {navItems.map(renderLink)}
-          </nav>
+          <nav className="hidden md:flex items-center gap-1">{navItems.map(renderLink)}</nav>
 
           <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher />
           </div>
 
           <button
+            type="button"
             className="md:hidden p-2 text-body hover:text-ink"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"

@@ -46,6 +46,7 @@
     "descriptionKey": "projects.items.opteco.description",
     "tech": ["Java", "Spigot", "Minecraft"],
     "githubUrl": "https://github.com/PlayerNguyen/OptEco",
+    "liveUrl": "https://www.spigotmc.org/resources/opteco-1-8-1-16-3-points-system-with-mysql-and-more.76179/",
     "category": "tools"
   },
   {

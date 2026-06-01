@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FiMail } from "react-icons/fi";
-import SectionHeading from "@/components/ui/SectionHeading";
 import SocialLinks from "@/components/shared/SocialLinks";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { socialLinks } from "@/data/social";
-import ContactForm from "@/sections/ContactForm";
+import ContactForm from "@/components/sections/ContactForm";
 
 export default function ContactSection() {
   const { t } = useTranslation();

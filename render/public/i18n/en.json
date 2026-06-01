@@ -77,12 +77,7 @@
     "education": "Education"
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "Thoughts and notes",
-    "read_more": "Read More",
-    "back": "Back to Blog",
-    "no_posts": "No posts yet",
-    "published_on": "Published on"
+    "title": "Blog"
   },
   "contact": {
     "title": "Get in Touch",

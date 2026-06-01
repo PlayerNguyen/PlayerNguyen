@@ -1,27 +1,31 @@
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiSpringboot,
-  SiPython,
-  SiOpenjdk,
-  SiBun,
-  SiHono,
-  SiPostgresql,
-  SiRedis,
-  SiApachekafka,
-  SiDocker,
-  SiGit,
-} from "react-icons/si";
-import { FiDatabase, FiCloud, FiCpu } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import { FiCloud, FiCpu, FiDatabase } from "react-icons/fi";
+import {
+  SiApachekafka,
+  SiBun,
+  SiDocker,
+  SiExpress,
+  SiGit,
+  SiHono,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenjdk,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiRedis,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 interface SkillCategory {
   key: string;
-  skills: { name: string; icon: IconType; category: "frontend" | "backend" | "ai_emerging" | "tools" }[];
+  skills: {
+    name: string;
+    icon: IconType;
+    category: "frontend" | "backend" | "ai_emerging" | "tools";
+  }[];
 }
 
 export const skillCategories: SkillCategory[] = [

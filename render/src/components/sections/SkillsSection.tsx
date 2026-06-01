@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { skillCategories } from "@/data/skills";
 

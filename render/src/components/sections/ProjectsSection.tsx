@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-import SectionHeading from "@/components/ui/SectionHeading";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Card from "@/components/ui/Card";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { getProjects } from "@/data/projects";
 import type { Project } from "@/types";
 
@@ -22,8 +22,7 @@ export default function ProjectsSection() {
     });
   }, []);
 
-  const filtered =
-    active === "all" ? projects : projects.filter((p) => p.category === active);
+  const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <section id="projects" className="py-section-y px-gutter bg-canvas border-t border-hairline">
@@ -34,6 +33,7 @@ export default function ProjectsSection() {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActive(cat)}
               className={`px-5 py-2 text-sm font-medium transition-colors ${
                 active === cat
@@ -64,10 +64,10 @@ export default function ProjectsSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <Card className="flex flex-col h-full">
-                      <h3 className="text-xl font-bold text-ink mb-2">
+                      <h3 className="text-display-sm text-ink-strong mb-2">
                         {t(project.titleKey)}
                       </h3>
-                      <p className="text-slate-gray text-sm flex-1 mb-4">
+                      <p className="text-body-sm text-body flex-1 mb-4">
                         {t(project.descriptionKey)}
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">

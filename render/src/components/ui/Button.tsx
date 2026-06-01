@@ -1,15 +1,13 @@
-import { type ButtonHTMLAttributes, type AnchorHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 type ButtonBase = {
   variant?: "primary" | "secondary" | "ghost";
   children: React.ReactNode;
 };
 
-type ButtonAsButton = ButtonBase &
-  ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+type ButtonAsButton = ButtonBase & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 
-type ButtonAsLink = ButtonBase &
-  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+type ButtonAsLink = ButtonBase & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 

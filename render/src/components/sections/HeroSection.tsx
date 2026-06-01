@@ -1,29 +1,53 @@
-import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
-  SiReact,
-  SiTypescript,
-  SiGithub,
-  SiGit,
   SiDocker,
+  SiGit,
+  SiGithub,
   SiNodedotjs,
-  SiSpringboot,
   SiPostgresql,
+  SiReact,
+  SiSpringboot,
+  SiTypescript,
 } from "react-icons/si";
-import Button from "@/components/ui/Button";
+import { useLocation, useNavigate } from "react-router-dom";
 import SocialLinks from "@/components/shared/SocialLinks";
+import Button from "@/components/ui/Button";
 import { socialLinks } from "@/data/social";
 
 const floatingIcons = [
   { Icon: SiReact, left: "3%", top: "15%", size: "text-4xl lg:text-5xl", color: "text-primary/40" },
-  { Icon: SiTypescript, left: "88%", top: "18%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
+  {
+    Icon: SiTypescript,
+    left: "88%",
+    top: "18%",
+    size: "text-3xl lg:text-4xl",
+    color: "text-primary/40",
+  },
   { Icon: SiGithub, left: "2%", top: "75%", size: "text-4xl lg:text-5xl", color: "text-ink/30" },
   { Icon: SiGit, left: "90%", top: "72%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
   { Icon: SiDocker, left: "48%", top: "5%", size: "text-3xl lg:text-4xl", color: "text-ink/30" },
-  { Icon: SiNodedotjs, left: "5%", top: "48%", size: "text-3xl lg:text-4xl", color: "text-primary/40" },
-  { Icon: SiSpringboot, left: "78%", top: "45%", size: "text-2xl lg:text-3xl", color: "text-primary/40" },
-  { Icon: SiPostgresql, left: "45%", top: "88%", size: "text-2xl lg:text-3xl", color: "text-ink/30" },
+  {
+    Icon: SiNodedotjs,
+    left: "5%",
+    top: "48%",
+    size: "text-3xl lg:text-4xl",
+    color: "text-primary/40",
+  },
+  {
+    Icon: SiSpringboot,
+    left: "78%",
+    top: "45%",
+    size: "text-2xl lg:text-3xl",
+    color: "text-primary/40",
+  },
+  {
+    Icon: SiPostgresql,
+    left: "45%",
+    top: "88%",
+    size: "text-2xl lg:text-3xl",
+    color: "text-ink/30",
+  },
 ];
 
 export default function HeroSection() {
@@ -46,7 +70,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         {floatingIcons.map(({ Icon, left, top, size, color }, i) => (
           <motion.div
-            key={i}
+            key={left + top}
             className={`absolute ${size} ${color}`}
             style={{ left, top }}
             initial={{ opacity: 0, y: 20 }}
@@ -87,14 +111,12 @@ export default function HeroSection() {
             <h3 className="text-eyebrow-mono text-primary tracking-[2.52px] mb-4">
               {t("hero.subtitle").toUpperCase()}
             </h3>
-            <h1 className="text-display-xl text-ink-strong font-sans">
-              {t("hero.title")}
-            </h1>
-            <p className="mt-6 text-body-lg text-body max-w-xl lg:max-w-none">
-              {t("hero.bio")}
-            </p>
+            <h1 className="text-display-xl text-ink-strong font-sans">{t("hero.title")}</h1>
+            <p className="mt-6 text-body-lg text-body max-w-xl lg:max-w-none">{t("hero.bio")}</p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="primary" onClick={() => scrollTo("projects")}>{t("hero.cta_projects")}</Button>
+              <Button variant="primary" onClick={() => scrollTo("projects")}>
+                {t("hero.cta_projects")}
+              </Button>
             </div>
             <div className="mt-8 flex justify-center lg:justify-start">
               <SocialLinks links={socialLinks} size="md" />

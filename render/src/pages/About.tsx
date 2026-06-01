@@ -1,12 +1,12 @@
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FiBookOpen, FiBriefcase } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
 import PageContainer from "@/components/shared/PageContainer";
-import SectionHeading from "@/components/ui/SectionHeading";
+import SEO from "@/components/shared/SEO";
 import Card from "@/components/ui/Card";
-import { timelineEvents } from "@/data/timeline";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { skillCategories } from "@/data/skills";
+import { timelineEvents } from "@/data/timeline";
 
 export default function About() {
   const { t } = useTranslation();
@@ -25,9 +25,7 @@ export default function About() {
           className="mb-16"
         >
           <Card>
-            <p className="text-body-md text-body leading-relaxed">
-              {t("about.bio")}
-            </p>
+            <p className="text-body-md text-body leading-relaxed">{t("about.bio")}</p>
           </Card>
         </motion.div>
 
@@ -38,9 +36,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16"
         >
-          <h3 className="text-display-lg text-center mb-8 text-ink-strong">
-            {t("skills.title")}
-          </h3>
+          <h3 className="text-display-lg text-center mb-8 text-ink-strong">{t("skills.title")}</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {skillCategories.map((cat) => (
               <Card key={cat.key}>
@@ -102,20 +98,12 @@ export default function About() {
                         ) : (
                           <FiBriefcase className="text-light-signal-orange" />
                         )}
-                        <span className="text-sm text-slate-gray">
-                          {t(event.dateKey)}
-                        </span>
+                        <span className="text-sm text-slate-gray">{t(event.dateKey)}</span>
                       </div>
                       <Card>
-                        <h4 className="text-display-sm text-ink-strong">
-                          {t(event.titleKey)}
-                        </h4>
-                        <p className="text-body-sm text-body mt-1">
-                          {event.institution}
-                        </p>
-                        <p className="text-body-sm text-mute mt-2">
-                          {t(event.descriptionKey)}
-                        </p>
+                        <h4 className="text-display-sm text-ink-strong">{t(event.titleKey)}</h4>
+                        <p className="text-body-sm text-body mt-1">{event.institution}</p>
+                        <p className="text-body-sm text-mute mt-2">{t(event.descriptionKey)}</p>
                       </Card>
                     </div>
                   </motion.div>
@@ -124,7 +112,7 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-        </PageContainer>
+      </PageContainer>
     </section>
   );
 }

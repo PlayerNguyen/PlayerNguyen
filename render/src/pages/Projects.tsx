@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import PageContainer from "@/components/shared/PageContainer";
-import SectionHeading from "@/components/ui/SectionHeading";
+import SEO from "@/components/shared/SEO";
 import Card from "@/components/ui/Card";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { getProjects } from "@/data/projects";
 import type { Project } from "@/types";
 
@@ -24,8 +24,7 @@ export default function Projects() {
     });
   }, []);
 
-  const filtered =
-    active === "all" ? projects : projects.filter((p) => p.category === active);
+  const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
@@ -38,12 +37,13 @@ export default function Projects() {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActive(cat)}
-               className={`px-5 py-2 text-sm font-medium transition-colors ${
-                 active === cat
-                   ? "bg-primary text-canvas rounded-sm border border-primary"
-                   : "text-body hover:text-ink rounded-sm border border-transparent hover:border-hairline"
-               }`}
+              className={`px-5 py-2 text-sm font-medium transition-colors ${
+                active === cat
+                  ? "bg-primary text-canvas rounded-sm border border-primary"
+                  : "text-body hover:text-ink rounded-sm border border-transparent hover:border-hairline"
+              }`}
             >
               {t(`projects.${cat === "tools" ? "tools_category" : cat}`)}
             </button>
@@ -56,10 +56,7 @@ export default function Projects() {
             <span className="text-body text-mute">Loading...</span>
           </div>
         ) : (
-          <motion.div
-            layout
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filtered.length > 0 ? (
                 filtered.map((project) => (
@@ -72,9 +69,7 @@ export default function Projects() {
                     transition={{ duration: 0.3 }}
                   >
                     <Card className="flex flex-col h-full">
-                      <h3 className="text-xl font-bold text-ink mb-2">
-                        {t(project.titleKey)}
-                      </h3>
+                      <h3 className="text-xl font-bold text-ink mb-2">{t(project.titleKey)}</h3>
                       <p className="text-slate-gray text-sm flex-1 mb-4">
                         {t(project.descriptionKey)}
                       </p>

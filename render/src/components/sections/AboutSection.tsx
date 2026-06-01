@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FiBookOpen, FiBriefcase } from "react-icons/fi";
-import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { timelineEvents } from "@/data/timeline";
 
 export default function AboutSection() {
@@ -22,9 +22,7 @@ export default function AboutSection() {
           className="mb-16"
         >
           <Card>
-            <p className="text-body-md text-body leading-relaxed">
-              {t("about.bio")}
-            </p>
+            <p className="text-body-md text-body leading-relaxed">{t("about.bio")}</p>
           </Card>
         </motion.div>
 
@@ -65,20 +63,12 @@ export default function AboutSection() {
                         ) : (
                           <FiBriefcase className="text-light-signal-orange" />
                         )}
-                        <span className="text-sm text-slate-gray">
-                          {t(event.dateKey)}
-                        </span>
+                        <span className="text-sm text-slate-gray">{t(event.dateKey)}</span>
                       </div>
                       <Card>
-                        <h4 className="text-display-sm text-ink-strong">
-                          {t(event.titleKey)}
-                        </h4>
-                        <p className="text-body-sm text-body mt-1">
-                          {event.institution}
-                        </p>
-                        <p className="text-body-sm text-mute mt-2">
-                          {t(event.descriptionKey)}
-                        </p>
+                        <h4 className="text-display-sm text-ink-strong">{t(event.titleKey)}</h4>
+                        <p className="text-body-sm text-body mt-1">{event.institution}</p>
+                        <p className="text-body-sm text-mute mt-2">{t(event.descriptionKey)}</p>
                       </Card>
                     </div>
                   </motion.div>
