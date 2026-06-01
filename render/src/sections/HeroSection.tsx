@@ -32,7 +32,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-canvas pt-14">
       {/* Floating icons — only in hero section */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 z-0">
         {floatingIcons.map(({ Icon, left, top, size, color }, i) => (
           <motion.div
             key={i}
@@ -42,6 +42,12 @@ export default function HeroSection() {
             animate={{
               opacity: 0.4,
               y: [0, -10, 0, 8, 0],
+            }}
+            whileHover={{
+              opacity: 1,
+              scale: 1.2,
+              color: "#00d992",
+              transition: { duration: 0.3 },
             }}
             transition={{
               opacity: { duration: 0.8, delay: i * 0.12 },

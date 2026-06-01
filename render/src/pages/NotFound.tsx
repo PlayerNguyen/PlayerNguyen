@@ -2,13 +2,15 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SEO from "@/components/shared/SEO";
+import PageContainer from "@/components/shared/PageContainer";
 
 export default function NotFound() {
   const { t } = useTranslation();
 
   return (
     <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas flex items-center justify-center">
-      <SEO titleKey="not_found.title" />
+      <PageContainer>
+        <SEO titleKey="not_found.title" />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,6 +33,7 @@ export default function NotFound() {
           {t("not_found.back_home")}
         </Link>
       </motion.div>
+      </PageContainer>
     </section>
   );
 }

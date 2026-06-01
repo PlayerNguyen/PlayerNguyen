@@ -35,13 +35,37 @@
         "title": "Portfolio Website",
         "description": "A personal portfolio built with React, TypeScript, and Tailwind CSS. Features bilingual support, smooth animations, and a clean design."
       },
-      "express_api": {
-        "title": "Express API Boilerplate",
-        "description": "A production-ready Express API starter with PostgreSQL, Docker, authentication, and comprehensive error handling."
+      "less_launcher": {
+        "title": "less-launcher",
+        "description": "A future open-source Minecraft launcher built with Tauri and React, featuring modern UI and game management."
       },
-      "java_tool": {
-        "title": "Java CLI Tool",
-        "description": "A command-line tool built with Java and Spring Boot for automating repetitive development tasks."
+      "l3ss": {
+        "title": "l3ss",
+        "description": "A lightweight, high-performance collection of Java utility libraries designed to streamline common development tasks."
+      },
+      "vietnamese_steam_fix": {
+        "title": "Vietnamese Steam Fix",
+        "description": "A patch that allows Vietnamese users to access the Steam Community without installing additional software or complex configurations."
+      },
+      "guava_llama": {
+        "title": "guava-llama",
+        "description": "An efficient, high-speed, and elegantly designed client for LLM hosting platforms like Ollama."
+      },
+      "opteco": {
+        "title": "OptEco",
+        "description": "A Paper/Spigot/Bukkit points system currency plugin for Minecraft servers with 9+ stars on GitHub."
+      },
+      "zombieland": {
+        "title": "ZombieLand",
+        "description": "A funny 2D shooting game built with JavaFX for the Object-Oriented Programming course."
+      },
+      "edusoft_auto_in": {
+        "title": "Edusoft Auto-In",
+        "description": "A Chromium extension that bypasses captcha on the Edusoft website for automatic login."
+      },
+      "dashbore": {
+        "title": "dashbore",
+        "description": "A fast and minimal web application built with TypeScript and Vite."
       }
     }
   },
@@ -58,19 +82,7 @@
     "read_more": "Read More",
     "back": "Back to Blog",
     "no_posts": "No posts yet",
-    "published_on": "Published on",
-    "items": {
-      "react_start": {
-        "title": "Getting Started with React",
-        "excerpt": "A beginner-friendly guide to understanding React components, state, and props.",
-        "content": "React is a JavaScript library for building user interfaces. This is a placeholder for the full blog post content."
-      },
-      "ts_tips": {
-        "title": "TypeScript Tips for Beginners",
-        "excerpt": "Practical TypeScript tips to write safer and cleaner code.",
-        "content": "TypeScript adds static typing to JavaScript. This is a placeholder for the full blog post content."
-      }
-    }
+    "published_on": "Published on"
   },
   "contact": {
     "title": "Get in Touch",

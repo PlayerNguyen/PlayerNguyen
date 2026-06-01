@@ -1,26 +1,24 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FiMail } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
-import PageContainer from "@/components/shared/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SocialLinks from "@/components/shared/SocialLinks";
 import { socialLinks } from "@/data/social";
 import ContactForm from "@/sections/ContactForm";
 
-export default function Contact() {
+export default function ContactSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
-      <PageContainer>
-        <SEO titleKey="contact.title" description="Contact Nguyễn Huỳnh Nguyên" />
+    <section id="contact" className="py-section-y px-gutter bg-canvas border-t border-hairline">
+      <div className="max-w-content mx-auto">
         <SectionHeading titleKey="contact.title" subtitleKey="contact.subtitle" />
 
         <div className="grid md:grid-cols-5 gap-8 mt-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="md:col-span-3"
           >
@@ -29,7 +27,8 @@ export default function Contact() {
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="md:col-span-2 space-y-8"
           >
@@ -52,7 +51,7 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
-        </PageContainer>
+      </div>
     </section>
   );
 }

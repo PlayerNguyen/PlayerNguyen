@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
-import PageContainer from "@/components/shared/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import { getProjects } from "@/data/projects";
@@ -11,7 +9,7 @@ import type { Project } from "@/types";
 
 const categories = ["all", "web", "mobile", "tools"] as const;
 
-export default function Projects() {
+export default function ProjectsSection() {
   const { t } = useTranslation();
   const [active, setActive] = useState<string>("all");
   const [projects, setProjects] = useState<Project[]>([]);
@@ -28,38 +26,32 @@ export default function Projects() {
     active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
-      <PageContainer>
-        <SEO titleKey="projects.title" description="Projects built by Nguyễn Huỳnh Nguyên" />
+    <section id="projects" className="py-section-y px-gutter bg-canvas border-t border-hairline">
+      <div className="max-w-content mx-auto">
         <SectionHeading titleKey="projects.title" subtitleKey="projects.subtitle" />
 
-        {/* Filter tabs */}
         <div className="flex justify-center gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-               className={`px-5 py-2 text-sm font-medium transition-colors ${
-                 active === cat
-                   ? "bg-primary text-canvas rounded-sm border border-primary"
-                   : "text-body hover:text-ink rounded-sm border border-transparent hover:border-hairline"
-               }`}
+              className={`px-5 py-2 text-sm font-medium transition-colors ${
+                active === cat
+                  ? "bg-primary text-canvas rounded-sm border border-primary"
+                  : "text-body hover:text-ink rounded-sm border border-transparent hover:border-hairline"
+              }`}
             >
               {t(`projects.${cat === "tools" ? "tools_category" : cat}`)}
             </button>
           ))}
         </div>
 
-        {/* Project grid */}
         {loading ? (
           <div className="flex justify-center py-20">
             <span className="text-body text-mute">Loading...</span>
           </div>
         ) : (
-          <motion.div
-            layout
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filtered.length > 0 ? (
                 filtered.map((project) => (
@@ -95,7 +87,6 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-1 text-body-sm text-body hover:text-primary transition-colors"
-                            aria-label="GitHub"
                           >
                             <FiGithub size={16} />
                             {t("projects.view_github")}
@@ -107,7 +98,6 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-1 text-body-sm text-body hover:text-primary transition-colors"
-                            aria-label="Live Demo"
                           >
                             <FiExternalLink size={16} />
                             {t("projects.view_live")}
@@ -129,7 +119,7 @@ export default function Projects() {
             </AnimatePresence>
           </motion.div>
         )}
-      </PageContainer>
+      </div>
     </section>
   );
 }

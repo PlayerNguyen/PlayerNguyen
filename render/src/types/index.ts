@@ -34,12 +34,12 @@ export interface TimelineEvent {
 
 export interface BlogPost {
   slug: string;
-  titleKey: string;
-  excerptKey: string;
+  title: string;
+  excerpt: string;
   date: string;
   readTime: string;
   tags: string[];
-  contentKey: string;
+  content: string;
 }
 
 export interface NavLink {

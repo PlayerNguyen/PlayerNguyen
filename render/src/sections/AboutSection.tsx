@@ -1,26 +1,23 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FiBookOpen, FiBriefcase } from "react-icons/fi";
-import SEO from "@/components/shared/SEO";
-import PageContainer from "@/components/shared/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import { timelineEvents } from "@/data/timeline";
-import { skillCategories } from "@/data/skills";
 
-export default function About() {
+export default function AboutSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen pt-20 pb-20 px-gutter bg-canvas">
-      <PageContainer>
-        <SEO titleKey="about.title" description="About Nguyễn Huỳnh Nguyên" />
+    <section id="about" className="py-section-y px-gutter bg-canvas border-t border-hairline">
+      <div className="max-w-content mx-auto">
         <SectionHeading titleKey="about.title" subtitleKey="about.subtitle" />
 
         {/* Bio */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -31,51 +28,18 @@ export default function About() {
           </Card>
         </motion.div>
 
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
-        >
-          <h3 className="text-display-lg text-center mb-8 text-ink-strong">
-            {t("skills.title")}
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {skillCategories.map((cat) => (
-              <Card key={cat.key}>
-                <h4 className="text-eyebrow-mono text-primary uppercase tracking-[2.52px] mb-4">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mr-2" />
-                  {t(`skills.${cat.key}`)}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill) => (
-                    <span
-                      key={skill.name}
-                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-canvas-soft text-body-sm text-ink border border-hairline"
-                    >
-                      <skill.icon className="text-base" />
-                      {skill.name}
-                    </span>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h3 className="text-display-lg text-center mb-8 text-ink-strong">
             {t("about.experience")} & {t("about.education")}
           </h3>
 
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-hairline -translate-x-1/2" />
 
             <div className="space-y-12">
@@ -85,16 +49,15 @@ export default function About() {
                   <motion.div
                     key={event.id}
                     initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 * i }}
                     className={`relative flex items-start gap-6 ${
                       isLeft ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
-                    {/* Dot */}
                     <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary -translate-x-1/2 z-10 mt-6" />
 
-                    {/* Content */}
                     <div className={`ml-10 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12" : "md:pl-12"}`}>
                       <div className="flex items-center gap-2 mb-2">
                         {event.type === "education" ? (
@@ -124,7 +87,7 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-        </PageContainer>
+      </div>
     </section>
   );
 }

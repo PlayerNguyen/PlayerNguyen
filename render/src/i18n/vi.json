@@ -35,13 +35,37 @@
         "title": "Trang Portfolio",
         "description": "Portfolio cá nhân được xây dựng với React, TypeScript và Tailwind CSS. Hỗ trợ song ngữ, hiệu ứng mượt mà và thiết kế tối giản."
       },
-      "express_api": {
-        "title": "Express API Boilerplate",
-        "description": "Một starter API Express sẵn sàng cho production với PostgreSQL, Docker, xác thực và xử lý lỗi toàn diện."
+      "less_launcher": {
+        "title": "less-launcher",
+        "description": "Trình khởi chạy Minecraft mã nguồn mở được xây dựng với Tauri và React, giao diện hiện đại và quản lý trò chơi."
       },
-      "java_tool": {
-        "title": "Java CLI Tool",
-        "description": "Công cụ dòng lệnh xây dựng với Java và Spring Boot để tự động hóa các tác vụ phát triển lặp đi lặp lại."
+      "l3ss": {
+        "title": "l3ss",
+        "description": "Bộ thư viện Java nhẹ, hiệu suất cao được thiết kế để tối ưu hóa các tác vụ phát triển thông thường."
+      },
+      "vietnamese_steam_fix": {
+        "title": "Vietnamese Steam Fix",
+        "description": "Bản vá cho phép người dùng Việt Nam truy cập Steam Community mà không cần cài đặt phần mềm bổ sung."
+      },
+      "guava_llama": {
+        "title": "guava-llama",
+        "description": "Ứng dụng client hiệu quả, tốc độ cao cho các nền tảng hosting LLM như Ollama."
+      },
+      "opteco": {
+        "title": "OptEco",
+        "description": "Plugin hệ thống tiền tệ cho máy chủ Minecraft Paper/Spigot/Bukkit với hơn 9 sao trên GitHub."
+      },
+      "zombieland": {
+        "title": "ZombieLand",
+        "description": "Game bắn súng 2D vui nhộn được xây dựng với JavaFX cho môn học Lập trình Hướng Đối tượng."
+      },
+      "edusoft_auto_in": {
+        "title": "Edusoft Auto-In",
+        "description": "Tiện ích mở rộng Chromium tự động đăng nhập vào website Edusoft."
+      },
+      "dashbore": {
+        "title": "dashbore",
+        "description": "Ứng dụng web nhanh và tối giản được xây dựng với TypeScript và Vite."
       }
     }
   },
@@ -58,19 +82,7 @@
     "read_more": "Đọc tiếp",
     "back": "Quay lại Blog",
     "no_posts": "Chưa có bài viết nào",
-    "published_on": "Đăng ngày",
-    "items": {
-      "react_start": {
-        "title": "Bắt đầu với React",
-        "excerpt": "Hướng dẫn cơ bản về React components, state và props.",
-        "content": "React là một thư viện JavaScript để xây dựng giao diện người dùng. Đây là nội dung placeholder cho bài viết đầy đủ."
-      },
-      "ts_tips": {
-        "title": "Mẹo TypeScript cho người mới",
-        "excerpt": "Các mẹo TypeScript thực tế giúp viết code an toàn và sạch hơn.",
-        "content": "TypeScript bổ sung kiểu tĩnh cho JavaScript. Đây là nội dung placeholder cho bài viết đầy đủ."
-      }
-    }
+    "published_on": "Đăng ngày"
   },
   "contact": {
     "title": "Liên hệ",
