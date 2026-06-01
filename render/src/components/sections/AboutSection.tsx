@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
-import { FiBookOpen, FiBriefcase } from "react-icons/fi";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { timelineEvents } from "@/data/timeline";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { FiBookOpen, FiBriefcase } from "react-icons/fi";
 
 export default function AboutSection() {
   const { t } = useTranslation();

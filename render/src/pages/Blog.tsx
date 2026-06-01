@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { FiClock } from "react-icons/fi";
 import PageContainer from "@/components/shared/PageContainer";
 import SEO from "@/components/shared/SEO";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { FiClock } from "react-icons/fi";
 
 export default function Blog() {
   const { t } = useTranslation();
@@ -18,9 +18,7 @@ export default function Blog() {
           className="text-center"
         >
           <FiClock className="text-6xl text-primary mx-auto mb-6" />
-          <h1 className="text-display-lg text-ink-strong mb-4">
-            {t("blog.title")}
-          </h1>
+          <h1 className="text-display-lg text-ink-strong mb-4">{t("blog.title")}</h1>
           <p className="text-body-lg text-body max-w-md mx-auto">
             Coming soon — I'm working on some interesting posts. Stay tuned!
           </p>

@@ -1,7 +1,6 @@
-/// <reference types="vitest" />
 import path from "node:path";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [react()],
@@ -13,12 +12,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          "vendor-react": ["react", "react-dom"],
-          "vendor-router": ["react-router-dom"],
-          "vendor-framer": ["framer-motion"],
-          "vendor-i18n": ["i18next", "react-i18next", "i18next-browser-languagedetector"],
-          "vendor-icons": ["react-icons"],
+        manualChunks(id: string) {
+          if (id.includes("node_modules/react-dom") || id.includes("node_modules/react/"))
+            return "vendor-react";
+          if (id.includes("node_modules/react-router-dom")) return "vendor-router";
+          if (id.includes("node_modules/framer-motion")) return "vendor-framer";
+          if (id.includes("node_modules/i18next")) return "vendor-i18n";
+          if (id.includes("node_modules/react-icons")) return "vendor-icons";
         },
       },
     },

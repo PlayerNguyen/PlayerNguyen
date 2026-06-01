@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
-import { FiMail } from "react-icons/fi";
+import ContactForm from "@/components/sections/ContactForm";
 import PageContainer from "@/components/shared/PageContainer";
 import SEO from "@/components/shared/SEO";
 import SocialLinks from "@/components/shared/SocialLinks";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { socialLinks } from "@/data/social";
-import ContactForm from "@/components/sections/ContactForm";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { FiMail } from "react-icons/fi";
 
 export default function Contact() {
   const { t } = useTranslation();

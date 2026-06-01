@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
 import PageContainer from "@/components/shared/PageContainer";
 import SEO from "@/components/shared/SEO";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { getProjects } from "@/data/projects";
 import type { Project } from "@/types";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const categories = ["all", "web", "mobile", "tools"] as const;
 

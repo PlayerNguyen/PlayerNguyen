@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
-import { FiBookOpen, FiBriefcase } from "react-icons/fi";
 import PageContainer from "@/components/shared/PageContainer";
 import SEO from "@/components/shared/SEO";
 import Card from "@/components/ui/Card";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { skillCategories } from "@/data/skills";
 import { timelineEvents } from "@/data/timeline";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { FiBookOpen, FiBriefcase } from "react-icons/fi";
 
 export default function About() {
   const { t } = useTranslation();

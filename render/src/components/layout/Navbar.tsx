@@ -1,8 +1,8 @@
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 
 interface SectionLink {
   labelKey: string;

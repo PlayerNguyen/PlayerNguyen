@@ -1,3 +1,6 @@
+import SocialLinks from "@/components/shared/SocialLinks";
+import Button from "@/components/ui/Button";
+import { socialLinks } from "@/data/social";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
@@ -11,9 +14,6 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { useLocation, useNavigate } from "react-router-dom";
-import SocialLinks from "@/components/shared/SocialLinks";
-import Button from "@/components/ui/Button";
-import { socialLinks } from "@/data/social";
 
 const floatingIcons = [
   { Icon: SiReact, left: "3%", top: "15%", size: "text-4xl lg:text-5xl", color: "text-primary/40" },
@@ -88,7 +88,7 @@ export default function HeroSection() {
               opacity: { duration: 0.8, delay: i * 0.12 },
               y: {
                 duration: 5 + (i % 3) * 1.5,
-                repeat: Infinity,
+                repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
                 delay: i * 0.5,
               },

@@ -1,8 +1,8 @@
+import PageContainer from "@/components/shared/PageContainer";
+import SEO from "@/components/shared/SEO";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import PageContainer from "@/components/shared/PageContainer";
-import SEO from "@/components/shared/SEO";
 
 export default function NotFound() {
   const { t } = useTranslation();
