@@ -1,0 +1,76 @@
+[
+  {
+    "id": "portfolio",
+    "titleKey": "projects.items.portfolio.title",
+    "descriptionKey": "projects.items.portfolio.description",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/PlayerNguyen/PlayerNguyen",
+    "liveUrl": "https://playernguyen.dev",
+    "category": "web"
+  },
+  {
+    "id": "less-launcher",
+    "titleKey": "projects.items.less_launcher.title",
+    "descriptionKey": "projects.items.less_launcher.description",
+    "tech": ["TypeScript", "Tauri", "React", "Rust"],
+    "githubUrl": "https://github.com/PlayerNguyen/less-launcher",
+    "category": "tools"
+  },
+  {
+    "id": "l3ss",
+    "titleKey": "projects.items.l3ss.title",
+    "descriptionKey": "projects.items.l3ss.description",
+    "tech": ["Java", "Maven"],
+    "githubUrl": "https://github.com/PlayerNguyen/l3ss",
+    "category": "tools"
+  },
+  {
+    "id": "vietnamese-steam-fix",
+    "titleKey": "projects.items.vietnamese_steam_fix.title",
+    "descriptionKey": "projects.items.vietnamese_steam_fix.description",
+    "tech": ["PowerShell"],
+    "githubUrl": "https://github.com/PlayerNguyen/vietnamese-steam-fix",
+    "category": "tools"
+  },
+  {
+    "id": "guava-llama",
+    "titleKey": "projects.items.guava_llama.title",
+    "descriptionKey": "projects.items.guava_llama.description",
+    "tech": ["TypeScript", "React", "LLM"],
+    "githubUrl": "https://github.com/PlayerNguyen/guava-llama",
+    "category": "web"
+  },
+  {
+    "id": "opteco",
+    "titleKey": "projects.items.opteco.title",
+    "descriptionKey": "projects.items.opteco.description",
+    "tech": ["Java", "Spigot", "Minecraft"],
+    "githubUrl": "https://github.com/PlayerNguyen/OptEco",
+    "liveUrl": "https://www.spigotmc.org/resources/opteco-1-8-1-16-3-points-system-with-mysql-and-more.76179/",
+    "category": "tools"
+  },
+  {
+    "id": "zombieland",
+    "titleKey": "projects.items.zombieland.title",
+    "descriptionKey": "projects.items.zombieland.description",
+    "tech": ["Java", "JavaFX"],
+    "githubUrl": "https://github.com/PlayerNguyen/ZombieLand",
+    "category": "mobile"
+  },
+  {
+    "id": "edusoft-auto-in",
+    "titleKey": "projects.items.edusoft_auto_in.title",
+    "descriptionKey": "projects.items.edusoft_auto_in.description",
+    "tech": ["JavaScript", "Chromium Extension"],
+    "githubUrl": "https://github.com/PlayerNguyen/edusoft-auto-in",
+    "category": "web"
+  },
+  {
+    "id": "dashbore",
+    "titleKey": "projects.items.dashbore.title",
+    "descriptionKey": "projects.items.dashbore.description",
+    "tech": ["TypeScript", "Vite"],
+    "githubUrl": "https://github.com/PlayerNguyen/dashbore",
+    "category": "web"
+  }
+]
