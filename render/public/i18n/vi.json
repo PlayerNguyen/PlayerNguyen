@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "projects": "Dự án",
+    "about": "Giới thiệu",
+    "blog": "Blog",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "title": "Nguyễn Huỳnh Nguyên",
+    "subtitle": "Kỹ sư Phần mềm",
+    "bio": "Kỹ sư phần mềm tại Netcompany, kiến trúc các ứng dụng doanh nghiệp mở rộng và tích hợp quy trình AI tác nhân.",
+    "cta_projects": "Xem Dự án",
+    "cta_contact": "Liên hệ"
+  },
+  "skills": {
+    "title": "Kỹ năng & Công nghệ",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "ai_emerging": "AI & Công nghệ mới",
+    "tools": "Công cụ & Hạ tầng"
+  },
+  "projects": {
+    "title": "Dự án",
+    "subtitle": "Những sản phẩm đã xây dựng",
+    "all": "Tất cả",
+    "web": "Web",
+    "mobile": "Di động",
+    "tools_category": "Công cụ",
+    "view_github": "GitHub",
+    "view_live": "Xem trực tiếp",
+    "no_projects": "Không có dự án nào",
+    "items": {
+      "portfolio": {
+        "title": "Trang Portfolio",
+        "description": "Portfolio cá nhân được xây dựng với React, TypeScript và Tailwind CSS. Hỗ trợ song ngữ, hiệu ứng mượt mà và thiết kế tối giản."
+      },
+      "less_launcher": {
+        "title": "less-launcher",
+        "description": "Trình khởi chạy Minecraft mã nguồn mở được xây dựng với Tauri và React, giao diện hiện đại và quản lý trò chơi."
+      },
+      "l3ss": {
+        "title": "l3ss",
+        "description": "Bộ thư viện Java nhẹ, hiệu suất cao được thiết kế để tối ưu hóa các tác vụ phát triển thông thường."
+      },
+      "vietnamese_steam_fix": {
+        "title": "Vietnamese Steam Fix",
+        "description": "Bản vá cho phép người dùng Việt Nam truy cập Steam Community mà không cần cài đặt phần mềm bổ sung."
+      },
+      "guava_llama": {
+        "title": "guava-llama",
+        "description": "Ứng dụng client hiệu quả, tốc độ cao cho các nền tảng hosting LLM như Ollama."
+      },
+      "opteco": {
+        "title": "OptEco",
+        "description": "Plugin hệ thống tiền tệ cho máy chủ Minecraft Paper/Spigot/Bukkit với hơn 9 sao trên GitHub."
+      },
+      "zombieland": {
+        "title": "ZombieLand",
+        "description": "Game bắn súng 2D vui nhộn được xây dựng với JavaFX cho môn học Lập trình Hướng Đối tượng."
+      },
+      "edusoft_auto_in": {
+        "title": "Edusoft Auto-In",
+        "description": "Tiện ích mở rộng Chromium tự động đăng nhập vào website Edusoft."
+      },
+      "dashbore": {
+        "title": "dashbore",
+        "description": "Ứng dụng web nhanh và tối giản được xây dựng với TypeScript và Vite."
+      }
+    }
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "subtitle": "Hành trình của tôi",
+    "bio": "Kỹ sư phần mềm tại Netcompany với kinh nghiệm kiến trúc ứng dụng web doanh nghiệp, dẫn dắt nhóm đa chức năng và tích hợp quy trình AI tác nhân. Tôi chuyên về Java, Spring Boot, React và TypeScript, và đam mê đóng góp mã nguồn mở cho các framework như Hono và Elysia.",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn"
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Tôi rất mong được nghe từ bạn",
+    "info_title": "Thông tin liên hệ",
+    "social_title": "Mạng xã hội",
+    "name_label": "Họ tên",
+    "name_placeholder": "Tên của bạn",
+    "email_label": "Email",
+    "email_placeholder": "email@cua-ban.com",
+    "subject_label": "Tiêu đề",
+    "subject_placeholder": "Nội dung chính?",
+    "message_label": "Nội dung",
+    "message_placeholder": "Lời nhắn của bạn...",
+    "submit": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "success": "Gửi tin nhắn thành công!",
+    "error": "Có lỗi xảy ra. Vui lòng thử lại.",
+    "validation_required": "Trường này bắt buộc",
+    "validation_email": "Vui lòng nhập email hợp lệ"
+  },
+  "footer": {
+    "copyright": "© {{year}} Nguyễn Huỳnh Nguyên. Đã đăng ký bản quyền.",
+    "back_to_top": "Lên đầu trang"
+  },
+  "not_found": {
+    "title": "Không tìm thấy trang",
+    "message": "Trang bạn đang tìm kiếm không tồn tại.",
+    "back_home": "Về trang chủ"
+  },
+  "timeline": {
+    "items": {
+      "netcompany": {
+        "date": "Thg 1, 2025 - Hiện tại",
+        "title": "Kỹ sư Phần mềm",
+        "description": "Đóng góp từ đầu vào Amplio Life & Pension (ALP), ứng dụng xử lý hồ sơ cấp công nghiệp châu Âu. Thiết kế tích hợp SDK cho lưu trữ đối tượng tương thích S3, Kafka và hộp thư nội bộ. Xây dựng tích hợp Outlook Calendar hiệu suất cao với Hazelcast. Dẫn dắt tích hợp quy trình AI tác nhân, giảm thời gian sửa lỗi 40%. Hướng dẫn 6-7 lập trình viên và dẫn dắt nhóm review code đa chức năng."
+      },
+      "nodesign": {
+        "date": "Thg 4, 2025 - Hiện tại",
+        "title": "Full Stack Engineer",
+        "description": "Phát triển full-stack freelance, cung cấp ứng dụng web từ đầu đến cuối cho khách hàng từ xa."
+      },
+      "smatyx": {
+        "date": "Thg 6, 2023 - Thg 2, 2024",
+        "title": "Junior Frontend Developer",
+        "description": "Triển khai giao diện web đa người dùng có khả năng mở rộng với React và TypeScript. Xây dựng các mẫu component tái sử dụng với Ant Design, tăng hiệu suất phát triển 25%."
+      },
+      "saigontv": {
+        "date": "Thg 6, 2023 - Thg 2, 2024",
+        "title": "Full Stack Engineer Tự do",
+        "description": "Phát triển nền tảng tin tức trực tuyến thân thiện SEO và CMS sử dụng React và Bun, với thiết lập Docker."
+      },
+      "fpt_software": {
+        "date": "Thg 4, 2023 - Thg 6, 2023",
+        "title": "Thực tập sinh Frontend Developer",
+        "description": "Triển khai ứng dụng career hub phía client sử dụng React tại FPT Software Academy."
+      },
+      "mindx": {
+        "date": "Thg 4, 2022 - Thg 3, 2023",
+        "title": "Mentor",
+        "description": "Hướng dẫn thanh thiếu niên và trẻ em về lập trình thông qua Scratch, cấu trúc dữ liệu và các khái niệm liên quan tại MindX Technology School."
+      },
+      "education": {
+        "date": "Thg 9, 2020 - Thg 9, 2024",
+        "title": "Cử nhân Công nghệ Thông tin",
+        "description": "Tốt nghiệp từ Đại học Quốc tế - Đại học Quốc gia HCM. Tham gia IU Hackathon và nghiên cứu Computer Vision tập trung vào công nghệ AIoT tại trường."
+      }
+    }
+  }
+}
