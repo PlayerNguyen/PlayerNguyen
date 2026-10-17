@@ -1,0 +1,60 @@
+import type { TimelineEvent } from "@/types";
+
+export const timelineEvents: TimelineEvent[] = [
+  {
+    id: "netcompany",
+    type: "experience",
+    dateKey: "timeline.items.netcompany.date",
+    titleKey: "timeline.items.netcompany.title",
+    descriptionKey: "timeline.items.netcompany.description",
+    institution: "Netcompany",
+  },
+  {
+    id: "nodesign",
+    type: "experience",
+    dateKey: "timeline.items.nodesign.date",
+    titleKey: "timeline.items.nodesign.title",
+    descriptionKey: "timeline.items.nodesign.description",
+    institution: "Nodesign",
+  },
+  {
+    id: "smatyx",
+    type: "experience",
+    dateKey: "timeline.items.smatyx.date",
+    titleKey: "timeline.items.smatyx.title",
+    descriptionKey: "timeline.items.smatyx.description",
+    institution: "Smatyx",
+  },
+  {
+    id: "saigontv",
+    type: "experience",
+    dateKey: "timeline.items.saigontv.date",
+    titleKey: "timeline.items.saigontv.title",
+    descriptionKey: "timeline.items.saigontv.description",
+    institution: "SaigonTV",
+  },
+  {
+    id: "fpt_software",
+    type: "experience",
+    dateKey: "timeline.items.fpt_software.date",
+    titleKey: "timeline.items.fpt_software.title",
+    descriptionKey: "timeline.items.fpt_software.description",
+    institution: "FPT Software",
+  },
+  {
+    id: "mindx",
+    type: "experience",
+    dateKey: "timeline.items.mindx.date",
+    titleKey: "timeline.items.mindx.title",
+    descriptionKey: "timeline.items.mindx.description",
+    institution: "MindX Technology School",
+  },
+  {
+    id: "education",
+    type: "education",
+    dateKey: "timeline.items.education.date",
+    titleKey: "timeline.items.education.title",
+    descriptionKey: "timeline.items.education.description",
+    institution: "International University - VNU HCMC",
+  },
+];
