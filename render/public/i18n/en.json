@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Nguyễn Huỳnh Nguyên",
+    "subtitle": "Software Engineer",
+    "bio": "Software Engineer at Netcompany, architecting scalable enterprise applications and integrating Agentic AI workflows.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Get in Touch"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "ai_emerging": "AI & Emerging Tech",
+    "tools": "Tools & Infrastructure"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things I've built",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "tools_category": "Tools",
+    "view_github": "GitHub",
+    "view_live": "Live Demo",
+    "no_projects": "No projects found",
+    "items": {
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "A personal portfolio built with React, TypeScript, and Tailwind CSS. Features bilingual support, smooth animations, and a clean design."
+      },
+      "less_launcher": {
+        "title": "less-launcher",
+        "description": "A future open-source Minecraft launcher built with Tauri and React, featuring modern UI and game management."
+      },
+      "l3ss": {
+        "title": "l3ss",
+        "description": "A lightweight, high-performance collection of Java utility libraries designed to streamline common development tasks."
+      },
+      "vietnamese_steam_fix": {
+        "title": "Vietnamese Steam Fix",
+        "description": "A patch that allows Vietnamese users to access the Steam Community without installing additional software or complex configurations."
+      },
+      "guava_llama": {
+        "title": "guava-llama",
+        "description": "An efficient, high-speed, and elegantly designed client for LLM hosting platforms like Ollama."
+      },
+      "opteco": {
+        "title": "OptEco",
+        "description": "A Paper/Spigot/Bukkit points system currency plugin for Minecraft servers with 9+ stars on GitHub."
+      },
+      "zombieland": {
+        "title": "ZombieLand",
+        "description": "A funny 2D shooting game built with JavaFX for the Object-Oriented Programming course."
+      },
+      "edusoft_auto_in": {
+        "title": "Edusoft Auto-In",
+        "description": "A Chromium extension that bypasses captcha on the Edusoft website for automatic login."
+      },
+      "dashbore": {
+        "title": "dashbore",
+        "description": "A fast and minimal web application built with TypeScript and Vite."
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My journey",
+    "bio": "Software Engineer at Netcompany with experience architecting enterprise web applications, leading cross-functional teams, and integrating Agentic AI workflows. I specialize in Java, Spring Boot, React, and TypeScript, and I'm passionate about open-source contributions to frameworks like Hono and Elysia.",
+    "experience": "Experience",
+    "education": "Education"
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "I'd love to hear from you",
+    "info_title": "Contact Info",
+    "social_title": "Social",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your@email.com",
+    "subject_label": "Subject",
+    "subject_placeholder": "What's this about?",
+    "message_label": "Message",
+    "message_placeholder": "Your message...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again.",
+    "validation_required": "This field is required",
+    "validation_email": "Please enter a valid email"
+  },
+  "footer": {
+    "copyright": "© {{year}} Nguyễn Huỳnh Nguyên. All rights reserved.",
+    "back_to_top": "Back to Top"
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist.",
+    "back_home": "Go Home"
+  },
+  "timeline": {
+    "items": {
+      "netcompany": {
+        "date": "Jan 2025 - Present",
+        "title": "Software Engineer",
+        "description": "Contributed from scratch to Amplio Life & Pension (ALP), an industrial-level European case-handling web application. Designed core SDK integrations for S3-compatible object storage, Kafka, and internal mailbox. Built a high-performance Outlook Calendar integration with Hazelcast caching. Spearheaded Agentic AI workflow integrations, reducing bug-fixing turnaround by 40%. Mentored 6-7 developers and led cross-functional code review groups."
+      },
+      "nodesign": {
+        "date": "Apr 2025 - Present",
+        "title": "Full Stack Engineer",
+        "description": "Freelance full-stack development, delivering end-to-end web applications for clients remotely."
+      },
+      "smatyx": {
+        "date": "Jun 2023 - Feb 2024",
+        "title": "Junior Frontend Developer",
+        "description": "Implemented a scalable, multi-tenant web UI using React and TypeScript. Built reusable component patterns with Ant Design, increasing development efficiency by 25%."
+      },
+      "saigontv": {
+        "date": "Jun 2023 - Feb 2024",
+        "title": "Freelance Full Stack Engineer",
+        "description": "Developed an SEO-friendly online news platform and CMS using React and Bun, backed by a containerized Docker setup."
+      },
+      "fpt_software": {
+        "date": "Apr 2023 - Jun 2023",
+        "title": "Intern Frontend Developer",
+        "description": "Implemented a client-side career hub application using React at FPT Software Academy."
+      },
+      "mindx": {
+        "date": "Apr 2022 - Mar 2023",
+        "title": "Mentor",
+        "description": "Taught teenagers and kids programming fundamentals via Scratch, data structures, and related concepts at MindX Technology School."
+      },
+      "education": {
+        "date": "Sep 2020 - Sep 2024",
+        "title": "Bachelor's in Information Technology",
+        "description": "Graduated from International University - National University, HCMC. Participated in IU Hackathon and served as a Computer Vision researcher focusing on AIoT technologies."
+      }
+    }
+  }
+}
